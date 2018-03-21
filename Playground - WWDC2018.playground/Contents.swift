@@ -3,6 +3,20 @@
 import UIKit
 import PlaygroundSupport
 
+extension UIColor{
+    class func globeColor() -> UIColor{
+        return UIColor(red: 82.0/255.0, green: 239.0/255.0, blue: 247.0/255.0, alpha: 0.14)
+    }
+    class func waterColor() -> UIColor{
+        return UIColor(red: 82.0/255.0, green: 239.0/255.0, blue: 247.0/255.0, alpha: 1)
+    }
+    class func continentColor() -> UIColor{
+        return UIColor(red: 230.0/255.0, green: 255.0/255.0, blue: 148.0/255.0, alpha: 1)
+    }
+    class func cloudColor() -> UIColor{
+        return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.8)
+    }
+}
 
 public class Earth{
     
@@ -25,33 +39,38 @@ public class Earth{
         self.setWater()
         self.setCloud(cloud: self.cloud1)
         self.setCloud(cloud: self.cloud2)
-        self.setContinent(continent: self.continent1)
-        self.setContinent(continent: self.continent2)
+        self.setContinent(continent: self.continent1, flag: 1)
+        self.setContinent(continent: self.continent2, flag: 2)
     }
     
     func setGlobe(){
-        self.globe.frame.size.height = 200
-        self.globe.frame.size.width = 200
-        self.globe.backgroundColor = UIColor.lightGray
+        self.globe.frame.size.height = 350
+        self.globe.frame.size.width = 350
+        self.globe.backgroundColor = UIColor.globeColor()
         self.globe.layer.cornerRadius = self.globe.frame.size.height/2
     }
     func setWater(){
-        self.water.frame.size.height = 180
-        self.water.frame.size.width = 180
-        self.water.backgroundColor = UIColor.blue
+        self.water.frame.size.height = 328
+        self.water.frame.size.width = 328
+        self.water.backgroundColor = UIColor.waterColor()
         self.water.layer.cornerRadius = self.water.frame.size.height/2
     }
     func setCloud(cloud: UIView){
-        cloud.frame.size.height = 100
-        cloud.frame.size.width = 100
-        cloud.backgroundColor = UIColor.red
+        cloud.frame.size.height = 94
+        cloud.frame.size.width = 242
+        cloud.backgroundColor = UIColor.cloudColor()
         cloud.layer.cornerRadius = cloud.frame.size.height/2
     }
     
-    func setContinent(continent: UIView){
-        continent.frame.size.height = 50
-        continent.frame.size.width = 50
-        continent.backgroundColor = UIColor.yellow
+    func setContinent(continent: UIView, flag: Int){
+        if flag == 1{
+            continent.frame.size.height = 65
+            continent.frame.size.width = 228
+        }else{
+            continent.frame.size.height = 96
+            continent.frame.size.width = 132
+        }
+        continent.backgroundColor = UIColor.continentColor()
         continent.layer.cornerRadius = continent.frame.size.height/2
     }
 }
@@ -66,15 +85,15 @@ class MyViewController : UIViewController {
         earth.water.center = CGPoint(x: 190, y: 300)
         earth.cloud1.center = CGPoint(x: 120, y: 330)
         earth.cloud2.center = CGPoint(x: 260, y: 250)
-        earth.continent1.center = CGPoint(x: 260, y: 250)
-        earth.continent2.center = CGPoint(x: 120, y: 330)
+        earth.continent1.center = CGPoint(x: 190, y: 240)
+        earth.continent2.center = CGPoint(x: 120, y: 360)
         
         view.addSubview(earth.globe)
         view.addSubview(earth.water)
-        view.addSubview(earth.cloud1)
-        view.addSubview(earth.cloud2)
         view.addSubview(earth.continent1)
         view.addSubview(earth.continent2)
+        view.addSubview(earth.cloud1)
+        view.addSubview(earth.cloud2)
         
     }
 }
