@@ -73,7 +73,27 @@ public class Earth{
             continent.image = #imageLiteral(resourceName: "icontnent2.png")
         }
     }
+    
+    
+    
+    func moveToRight(image: UIImageView) {
+
+            UIView.animate(withDuration: 10.3, delay: 0.0, options: [.curveLinear],
+                           animations: {image.center.x += 120},
+                           completion: {_ in self.moveToLeft(image: image)})
+    }
+    
+
+
+func moveToLeft(image: UIImageView) {
+    
+    UIView.animate(withDuration: 10.7, delay: 0.3, options: [.curveLinear],
+                   animations: {image.center.x -= 120},
+                   completion: {_ in self.moveToRight(image: image)})
+    }
+
 }
+
 
 class MyViewController : UIViewController {
     override func loadView() {
@@ -83,9 +103,9 @@ class MyViewController : UIViewController {
         let earth = Earth()
         earth.globe.center = CGPoint(x: 190, y: 300)
         earth.water.center = CGPoint(x: 190, y: 300)
-        earth.cloud1.center = CGPoint(x: 120, y: 380)
-        earth.cloud2.center = CGPoint(x: 260, y: 250)
-        earth.continent1.center = CGPoint(x: 190, y: 240)
+        earth.cloud1.center = CGPoint(x: 260, y: 245)
+        earth.cloud2.center = CGPoint(x: 120, y: 380)
+        earth.continent1.center = CGPoint(x: 190, y: 220)
         earth.continent2.center = CGPoint(x: 120, y: 360)
 
         
@@ -96,6 +116,8 @@ class MyViewController : UIViewController {
         view.addSubview(earth.continent2)
         view.addSubview(earth.cloud1)
         view.addSubview(earth.cloud2)
+        earth.moveToRight(image: earth.cloud2)
+        earth.moveToLeft(image: earth.cloud1)
         
     }
 }
