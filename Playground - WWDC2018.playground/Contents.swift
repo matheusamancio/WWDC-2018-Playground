@@ -22,19 +22,19 @@ public class Earth{
     
     var globe: UIView
     var water: UIView
-    var cloud1: UIView
-    var cloud2: UIView
-    var continent1: UIView
-    var continent2: UIView
+    var cloud1: UIImageView
+    var cloud2: UIImageView
+    var continent1: UIImageView
+    var continent2: UIImageView
     
     public init(){
         self.globe = UIView()
         self.water = UIView()
-        self.cloud1 = UIView()
-        self.cloud2 = UIView()
-        self.continent1 = UIView()
-        self.continent2 = UIView()
-        
+        self.cloud1 = UIImageView()
+        self.cloud2 = UIImageView()
+        self.continent1 = UIImageView()
+        self.continent2 = UIImageView()
+
         self.setGlobe()
         self.setWater()
         self.setCloud(cloud: self.cloud1)
@@ -42,6 +42,7 @@ public class Earth{
         self.setContinent(continent: self.continent1, flag: 1)
         self.setContinent(continent: self.continent2, flag: 2)
     }
+    
     
     func setGlobe(){
         self.globe.frame.size.height = 350
@@ -55,23 +56,22 @@ public class Earth{
         self.water.backgroundColor = UIColor.waterColor()
         self.water.layer.cornerRadius = self.water.frame.size.height/2
     }
-    func setCloud(cloud: UIView){
+    func setCloud(cloud: UIImageView){
         cloud.frame.size.height = 94
         cloud.frame.size.width = 242
-        cloud.backgroundColor = UIColor.cloudColor()
-        cloud.layer.cornerRadius = cloud.frame.size.height/2
+        cloud.image = #imageLiteral(resourceName: "icloud.png")
     }
     
-    func setContinent(continent: UIView, flag: Int){
+    func setContinent(continent: UIImageView, flag: Int){
         if flag == 1{
             continent.frame.size.height = 65
             continent.frame.size.width = 228
+            continent.image = #imageLiteral(resourceName: "icontinent1.png")
         }else{
             continent.frame.size.height = 96
             continent.frame.size.width = 132
+            continent.image = #imageLiteral(resourceName: "icontnent2.png")
         }
-        continent.backgroundColor = UIColor.continentColor()
-        continent.layer.cornerRadius = continent.frame.size.height/2
     }
 }
 
@@ -83,10 +83,12 @@ class MyViewController : UIViewController {
         let earth = Earth()
         earth.globe.center = CGPoint(x: 190, y: 300)
         earth.water.center = CGPoint(x: 190, y: 300)
-        earth.cloud1.center = CGPoint(x: 120, y: 330)
+        earth.cloud1.center = CGPoint(x: 120, y: 380)
         earth.cloud2.center = CGPoint(x: 260, y: 250)
         earth.continent1.center = CGPoint(x: 190, y: 240)
         earth.continent2.center = CGPoint(x: 120, y: 360)
+
+        
         
         view.addSubview(earth.globe)
         view.addSubview(earth.water)
