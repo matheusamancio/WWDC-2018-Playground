@@ -5,43 +5,15 @@ import PlaygroundSupport
 let scene = Scene()
 
 
-public class LabelStyle{
 
-    private var text: Texts
-    private var label: UILabel
-    
-    public init(text: Texts){
-        self.text = text
-        self.label = UILabel()
-        buildLabel()
-    }
-
-    private func buildLabel() {
-        self.label.text = self.text.getTexts()
-        self.label.textColor = self.text.getColor()
-        self.label.font = UIFont.systemFont(ofSize: self.text.getSize())
-//        label.font = UIFont.systemFont(ofSize: textSize)
-//        let amountText = NSMutableAttributedString.init(string: self.text)
-//        amountText.setAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: textImpactSize ?? textSize),
-//                                  NSAttributedStringKey.foregroundColor: self.textInfoColor ?? textColor],
-//                                 range: NSMakeRange(rangetTextInfo?.0 ?? 0, rangetTextInfo?.1 ?? 0))
-
-//        label.attributedText = amountText
-    }
-    
-    public func getLabel() -> UILabel{
-        return self.label
-    }
-}
 
 class MyViewController : UIViewController {
     override func loadView() {
         
+        let text = Texts(i: 1)
         
-        let mytext = Texts(i: 1)
-        
-        let mylabel = LabelStyle(text: mytext).getLabel()
-        mylabel.frame = CGRect(x: 30, y: 30, width: 100, height: 100)
+        let mylabel = LabelBuilder(text: text).getLabel()
+        mylabel.frame = CGRect(x: 30, y: 30, width: 400, height: 150)
         
         let view = UIView()
         view.backgroundColor = scene.getBackgroundColor()
