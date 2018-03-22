@@ -26,17 +26,17 @@ public class Scene{
         self.labelTextColor = UIColor.black
     }
     public func secondScene(view: UIView){
+        self.labelTextColor = UIColor.white
         UIView.animate(withDuration: 2, delay: 0, options: .curveEaseIn, animations: {
             view.backgroundColor = UIColor.airPolutionBackgroundColor()
-            self.labelTextColor = UIColor.white
         }, completion: nil)
         
     }
     
     public func thirdScene(view: UIView){
+        self.labelTextColor = UIColor.white
         UIView.animate(withDuration: 2, delay: 0, options: .curveEaseIn, animations: {
             view.backgroundColor = UIColor.scarcityBackgroundColor()
-            self.labelTextColor = UIColor.white
         }, completion: nil)
     }
     
