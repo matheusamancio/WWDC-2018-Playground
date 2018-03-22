@@ -5,8 +5,12 @@ import PlaygroundSupport
 
 class MyViewController : UIViewController {
     override func loadView() {
+        
+        let scene = Scenes()
+        
+        
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = scene.getBackgroundColor()
         self.view = view
         let earth = Earth()
         let globe = earth.getGlobe()
