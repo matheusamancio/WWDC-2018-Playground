@@ -2,12 +2,9 @@
   
 import UIKit
 import PlaygroundSupport
-
+let scene = Scene()
 class MyViewController : UIViewController {
     override func loadView() {
-        
-        let scene = Scenes()
-        
         
         let view = UIView()
         view.backgroundColor = scene.getBackgroundColor()
@@ -34,10 +31,20 @@ class MyViewController : UIViewController {
         view.addSubview(continent2)
         view.addSubview(cloud1)
         view.addSubview(cloud2)
+        
         earth.moveToLeft(image: cloud1)
         earth.moveToRight(image: cloud2)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MyViewController.update), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(MyViewController.update2), userInfo: nil, repeats: false)
         
     }
+    @objc func update() {
+        scene.secondScene(view: view)
+    }
+    @objc func update2() {
+        scene.thirdScene(view: view)
+    }
+    
 }
 // Present the view controller in the Live View window
 PlaygroundPage.current.liveView = MyViewController()
