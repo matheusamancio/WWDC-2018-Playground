@@ -3,8 +3,29 @@
 import UIKit
 import PlaygroundSupport
 let scene = Scene()
+
+
+
 class MyViewController : UIViewController {
     override func loadView() {
+        
+        
+        let mytexts = Texts().getTexts()
+        
+        let mylabel = UILabel()
+        mylabel.textColor = UIColor.black
+        let amountText = NSMutableAttributedString.init(string: mytexts[4])
+        
+        // set the custom font and color for the 0,1 range in string
+        amountText.setAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12),
+                                  NSAttributedStringKey.foregroundColor: UIColor.gray],
+                                 range: NSMakeRange(3, 3))
+        // if you want, you can add more attributes for different ranges calling .setAttributes many times
+        
+        // set the attributed string to the UILabel object
+        mylabel.attributedText = amountText
+        
+        mylabel.frame = CGRect(x: 30, y: 30, width: 100, height: 100)
         
         let view = UIView()
         view.backgroundColor = scene.getBackgroundColor()
@@ -32,16 +53,17 @@ class MyViewController : UIViewController {
         view.addSubview(cloud1)
         view.addSubview(cloud2)
         
+        view.addSubview(mylabel)
+        
         earth.moveToLeft(image: cloud1)
         earth.moveToRight(image: cloud2)
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MyViewController.update), userInfo: nil, repeats: false)
-        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(MyViewController.update2), userInfo: nil, repeats: false)
-        
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MyViewController.goToSecondScene), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(MyViewController.goToThirdScene), userInfo: nil, repeats: false)
     }
-    @objc func update() {
+    @objc func goToSecondScene() {
         scene.secondScene(view: view)
     }
-    @objc func update2() {
+    @objc func goToThirdScene() {
         scene.thirdScene(view: view)
     }
     
