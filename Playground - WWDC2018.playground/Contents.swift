@@ -3,16 +3,16 @@
 import UIKit
 import PlaygroundSupport
 let scene = Scene()
-
+var mylabel = UILabel()
 
 
 
 class MyViewController : UIViewController {
     override func loadView() {
         
-        let text = Texts(i: 1)
+        let text = Texts(i: 2)
         
-        let mylabel = LabelBuilder(text: text).getLabel()
+        mylabel = LabelBuilder(text: text).getLabel()
         mylabel.frame = CGRect(x: 30, y: 30, width: 400, height: 150)
         
         let view = UIView()
@@ -40,7 +40,6 @@ class MyViewController : UIViewController {
         view.addSubview(continent2)
         view.addSubview(cloud1)
         view.addSubview(cloud2)
-        
         view.addSubview(mylabel)
         
         earth.moveToLeft(image: cloud1)
@@ -49,9 +48,13 @@ class MyViewController : UIViewController {
         Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(MyViewController.goToThirdScene), userInfo: nil, repeats: false)
     }
     @objc func goToSecondScene() {
+        let text = Texts(i: 1)
+        mylabel.attributedText = LabelBuilder(text: text).getLabel().attributedText
         scene.secondScene(view: view)
     }
     @objc func goToThirdScene() {
+        let text = Texts(i: 4)
+        mylabel.attributedText = LabelBuilder(text: text).getLabel().attributedText
         scene.thirdScene(view: view)
     }
     

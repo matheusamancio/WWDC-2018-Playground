@@ -40,7 +40,7 @@ public class Texts{
         //textColor
         let colorTextBlack = UIColor.black
         let colorTextWhite = UIColor.white
-        let arrayColor = [colorTextBlack, colorTextWhite,colorTextWhite,colorTextWhite,colorTextWhite,colorTextWhite]
+        let arrayColor = [colorTextBlack, colorTextBlack,colorTextWhite,colorTextWhite,colorTextWhite,colorTextWhite]
         
         //textSize
         let size1: CGFloat = 20
