@@ -22,8 +22,8 @@ public extension UIColor{
     public class func scarcityBackgroundColor() -> UIColor{
         return UIColor(red: 66.0/255.0, green: 33.0/255.0, blue: 57.0/255.0, alpha: 1)
     }
-
-
+    
+    
     //Earth Colors
     public class func globeColor() -> UIColor{
         return UIColor(red: 82.0/255.0, green: 239.0/255.0, blue: 247.0/255.0, alpha: 0.14)
@@ -38,3 +38,18 @@ public extension UIColor{
         return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.8)
     }
 }
+
+public extension UILabel {
+    public func fadeIn(duration: TimeInterval) {
+        UIView.animate(withDuration: duration) {
+            self.alpha = 1.0
+        }
+    }
+    public func fadeOut(duration: TimeInterval) {
+        UIView.animate(withDuration: duration) {
+            self.alpha = 0.0
+        }
+    }
+}
+
+

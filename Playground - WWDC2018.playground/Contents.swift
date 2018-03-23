@@ -4,15 +4,13 @@ import UIKit
 import PlaygroundSupport
 let scene = Scene()
 var mylabel = UILabel()
+let text = Texts(i: 0)
 
 
 
 class MyViewController : UIViewController {
     override func loadView() {
         
-        let text = Texts(i: 2)
-        
-        mylabel = LabelBuilder(text: text).getLabel()
         mylabel.frame = CGRect(x: 30, y: 30, width: 400, height: 150)
         
         let view = UIView()
@@ -44,18 +42,52 @@ class MyViewController : UIViewController {
         
         earth.moveToLeft(image: cloud1)
         earth.moveToRight(image: cloud2)
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MyViewController.goToSecondScene), userInfo: nil, repeats: false)
-        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(MyViewController.goToThirdScene), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(MyViewController.goToFirstSentence), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 12, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 16, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
+        
+        Timer.scheduledTimer(timeInterval: 24, target: self, selector: #selector(MyViewController.goToSixthScene), userInfo: nil, repeats: false)
+        
+        Timer.scheduledTimer(timeInterval: 28, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
+        
+        Timer.scheduledTimer(timeInterval: 32, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
+        
+        Timer.scheduledTimer(timeInterval: 38, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
     }
-    @objc func goToSecondScene() {
-        let text = Texts(i: 1)
-        mylabel.attributedText = LabelBuilder(text: text).getLabel().attributedText
+    
+    
+    @objc func goToFirstSentence() {
+        fadeOutIn(text: text)
+    }
+    @objc func goToPatternSentence() {
+       text.nextSentence()
+        fadeOutIn(text: text)
+    }
+
+    @objc func goToSixthScene() {
+        mylabel.fadeOut(duration: 1)
         scene.secondScene(view: view)
     }
-    @objc func goToThirdScene() {
-        let text = Texts(i: 4)
-        mylabel.attributedText = LabelBuilder(text: text).getLabel().attributedText
-        scene.thirdScene(view: view)
+    
+    func fadeOutIn(text: Texts){
+        mylabel.fadeOut(duration: 1)
+        let lbl = LabelBuilder(text: text)
+        mylabel.attributedText = lbl.getLabel().attributedText
+        mylabel.textColor = lbl.getLabel().textColor
+        mylabel.fadeIn(duration: 1)
+
+//        UIView.animate(withDuration: 1, animations: {
+//            mylabel.alpha = 0
+//        }) { (true) in
+//            let lbl = LabelBuilder(text: text)
+//            mylabel.attributedText = lbl.getLabel().attributedText
+//            mylabel.textColor = lbl.getLabel().textColor
+//            UIView.animate(withDuration: 1) {
+//                mylabel.alpha = 1
+//            }
+//        }
     }
     
 }

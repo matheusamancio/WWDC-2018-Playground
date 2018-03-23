@@ -8,10 +8,8 @@ public class Texts{
     private var textColor: UIColor
     private var textSize: CGFloat
     private var textImpactSize: CGFloat
-//    private var textInfoColor: UIColor
     private var rangeTextImpact: (Int,Int)
-//    private var rangetTextInfo: (Int,Int)
-//
+    private var ind: Int
     
     public init(i: Int){
         self.text = String()
@@ -19,43 +17,41 @@ public class Texts{
         self.textSize = CGFloat()
         self.textImpactSize = CGFloat()
         self.rangeTextImpact = (0,0)
-//        self.textInfoColor = UIColor()
-//        self.rangeTextImpact = (Int,Int)()
-//        self.rangetTextInfo = (Int,Int)()
+        self.ind = 0
         self.autoAppend(i:i)
     }
     
     private func autoAppend(i: Int){
         // texts
-        let text1 = "Hi, I'm Earth..."
-        let text2 = "Are you my friend?"
-        let text3 = "So if you're, I will tell something"
-        let text4 = "I'm sad... You know why..."
-        let text5 = "Don't you?"
-        let text6 = "Do you know that i'm sofering about deforestation? "
-        let text7 = "more than 13Mi hectares are cutted out every Year"
-        let text8 = "... And this is only one thing that I'm sad"
-        let arrayText = [text1, text2, text3, text4, text5, text6, text7, text8]
+        let text0 = "Hi, I'm Earth..."
+        let text1 = "Are you my friend?"
+        let text2 = "So if you're, I will tell something"
+        let text3 = "I'm sad... You know why..."
+        let text4 = "Don't you?"
+        let text5 = "Do you know that i'm sofering about deforestation? "
+        let text6 = "more than 13Mi hectares are cutted out every Year"
+        let text7 = "... And this is only one thing that I'm sad"
+        let arrayText = [text0, text1, text2, text3, text4, text5, text6, text7]
         
         //textColor
         let colorTextBlack = UIColor.black
         let colorTextWhite = UIColor.white
-        let arrayColor = [colorTextBlack, colorTextBlack,colorTextWhite,colorTextWhite,colorTextWhite,colorTextWhite]
+        let arrayColor = [colorTextBlack, colorTextBlack,colorTextBlack,colorTextBlack,colorTextBlack,colorTextWhite, colorTextWhite, colorTextWhite, colorTextWhite, colorTextWhite, colorTextWhite]
         
         //textSize
-        let size1: CGFloat = 20
-        let size2: CGFloat = 12
-        let arraySize = [size2, size1, size1, size1, size2, size2]
+        let size1: CGFloat = 12
+        let size2: CGFloat = 20
+        let arraySize = [size1, size1, size1, size1, size2, size2,size2, size1, size1, size1, size1]
         
         //textImpactSize
+        let noSize: CGFloat = 0
         let sizeImp1: CGFloat = 80
-        let sizeImp2: CGFloat = 90
-        let arraySizeImp = [sizeImp1, sizeImp2, sizeImp1, sizeImp2, sizeImp2, sizeImp1]
+        let arraySizeImp = [noSize, noSize, noSize, noSize, noSize, noSize, sizeImp1, noSize, noSize, noSize, noSize]
         
         //textImpactSize
-        let rangeImp1 = (3,3)
-        let rangeImp2 = (3,4)
-        let arrayRangeImp = [rangeImp1, rangeImp1, rangeImp1, rangeImp1, rangeImp2, rangeImp2]
+        let noRange = (0,0)
+        let rangeImp1 = (10,4)
+        let arrayRangeImp = [noRange, noRange, noRange, noRange, noRange, noRange, rangeImp1, noRange, noRange, noRange]
         
         self.text = arrayText[i]
         self.textColor = arrayColor[i]
@@ -77,6 +73,10 @@ public class Texts{
     }
     public func getRangeImp() -> (Int, Int){
         return self.rangeTextImpact
+    }
+    public func nextSentence(){
+        self.ind = self.ind + 1
+        self.autoAppend(i:ind)
     }
 }
 
