@@ -43,18 +43,14 @@ class MyViewController : UIViewController {
         earth.moveToLeft(image: cloud1)
         earth.moveToRight(image: cloud2)
         Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(MyViewController.goToFirstSentence), userInfo: nil, repeats: false)
-        Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
-        Timer.scheduledTimer(timeInterval: 12, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
-        Timer.scheduledTimer(timeInterval: 16, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
-        Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
-        
-        Timer.scheduledTimer(timeInterval: 24, target: self, selector: #selector(MyViewController.goToSixthScene), userInfo: nil, repeats: false)
-        
-        Timer.scheduledTimer(timeInterval: 28, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
-        
-        Timer.scheduledTimer(timeInterval: 32, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
-        
-        Timer.scheduledTimer(timeInterval: 38, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
+        startAnimation()
+    }
+    
+    
+    func startAnimation(){
+        var time: TimeInterval = 6
+        Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
+        time = time + 4
     }
     
     
@@ -64,6 +60,7 @@ class MyViewController : UIViewController {
     @objc func goToPatternSentence() {
        text.nextSentence()
         fadeOutIn(text: text)
+        
     }
 
     @objc func goToSixthScene() {
@@ -72,22 +69,23 @@ class MyViewController : UIViewController {
     }
     
     func fadeOutIn(text: Texts){
-        mylabel.fadeOut(duration: 1)
-        let lbl = LabelBuilder(text: text)
-        mylabel.attributedText = lbl.getLabel().attributedText
-        mylabel.textColor = lbl.getLabel().textColor
-        mylabel.fadeIn(duration: 1)
+//        mylabel.fadeOut(duration: 1)
+//        let lbl = LabelBuilder(text: text)
+//        mylabel.attributedText = lbl.getLabel().attributedText
+//        mylabel.textColor = lbl.getLabel().textColor
+//        mylabel.fadeIn(duration: 1)
 
-//        UIView.animate(withDuration: 1, animations: {
-//            mylabel.alpha = 0
-//        }) { (true) in
-//            let lbl = LabelBuilder(text: text)
-//            mylabel.attributedText = lbl.getLabel().attributedText
-//            mylabel.textColor = lbl.getLabel().textColor
-//            UIView.animate(withDuration: 1) {
-//                mylabel.alpha = 1
-//            }
-//        }
+        UIView.animate(withDuration: 1, animations: {
+            mylabel.alpha = 0
+        }) { (true) in
+            let lbl = LabelBuilder(text: text)
+            mylabel.attributedText = lbl.getLabel().attributedText
+            mylabel.textColor = lbl.getLabel().textColor
+            UIView.animate(withDuration: 1) {
+                mylabel.alpha = 1
+                self.startAnimation()
+            }
+        }
     }
     
 }
