@@ -15,7 +15,7 @@ public class Story{
     private var arrayText: [String]
     private var arrayBack: [Int]
     private var arrayDelay:[TimeInterval]
-//    private var arrayColor: [UIColor]
+    private var arrayTextColor: [UIColor]
 //    private var arraySize: [CGFloat]
 //    private var arraySizeImp: [CGFloat]
 //    private var arrayRangeImp: [(Int, Int)]
@@ -32,8 +32,7 @@ public class Story{
         self.arrayText = []
         self.arrayBack = []
         self.arrayDelay = []
-
-//        self.arrayColor = []
+        self.arrayTextColor = []
 //        self.arraySize = []
 //        self.arraySizeImp = []
 //        self.arrayRangeImp = []
@@ -56,7 +55,7 @@ public class Story{
         //textColor
         let colorTextBlack = UIColor.black
         let colorTextWhite = UIColor.white
-        let arrayColor = [colorTextBlack, colorTextBlack,colorTextBlack,colorTextBlack,colorTextBlack,colorTextWhite, colorTextWhite, colorTextWhite, colorTextWhite, colorTextWhite, colorTextWhite]
+        self.arrayTextColor = [colorTextBlack, colorTextBlack,colorTextBlack,colorTextBlack,colorTextBlack,colorTextWhite, colorTextWhite, colorTextWhite, colorTextWhite, colorTextWhite, colorTextWhite]
         
         //textSize
         let size1: CGFloat = 12
@@ -77,7 +76,7 @@ public class Story{
         let back1 = 0
         let back2 = 1
         let back3 = 2
-        self.arrayBack = [back1, back1, back1, back1, back1, back3, back3, back3, back3, back3]
+        self.arrayBack = [back1, back1, back1, back1, back1, back3, back3, back3, back3, back2]
         
         //Delay
         let delay1: TimeInterval = 0
@@ -87,13 +86,13 @@ public class Story{
         
         self.arrayText = arrayText1
         self.text = arrayText[i]
-        self.textColor = arrayColor[i]
+        self.textColor = arrayTextColor[i]
         self.textSize = arraySize[i]
         self.textImpactSize = arraySizeImp[i]
         self.rangeTextImpact = arrayRangeImp[i]
     }
     
-    public func chooseTest(i:Int) -> String{
+    public func chooseText(i:Int) -> String{
         return arrayText[i]
     }
     
@@ -104,6 +103,10 @@ public class Story{
 
     public func chooseDelay(i:Int) -> TimeInterval{
         return arrayDelay[i]
+    }
+    
+    public func chooseTextColor(i:Int) -> UIColor{
+        return arrayTextColor[i]
     }
 //    public func chooseStory(i: Int){
 //        self.text = self.arrayText[i]

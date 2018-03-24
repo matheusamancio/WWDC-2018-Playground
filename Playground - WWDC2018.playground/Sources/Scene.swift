@@ -16,9 +16,11 @@ public class Scenes{
     
     public func sceneSequency(i: Int){
         let delay = story.chooseDelay(i: i)
-        let text = story.chooseTest(i: i)
-        self.whichbackgroundColor(i: story.chooseBack(i: i))
-        self.fadeOutInLabel(text:text, delay: delay)
+        let text = story.chooseText(i: i)
+        let textColor = story.chooseTextColor(i:i)
+        let backgroundColor = story.chooseBack(i: i)
+        self.whichbackgroundColor(i:backgroundColor)
+        self.fadeOutInLabel(text:text, textColor: textColor, delay: delay)
         let id = i + 1
         DispatchQueue.main.asyncAfter(deadline: .now() + 4 + delay) {
             self.sceneSequency(i: id)
@@ -45,13 +47,14 @@ public class Scenes{
 
     
     
-    func fadeOutInLabel(text: String, delay: TimeInterval){
+    func fadeOutInLabel(text: String, textColor: UIColor, delay: TimeInterval){
         UIView.animate(withDuration: 1, animations: {
             self.label.alpha = 0
         }) { (true) in
             self.label.text = text
             UIView.animate(withDuration: 1, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations: {
                 self.label.alpha = 1
+                self.label.textColor = textColor
             }, completion: nil)
         }
     }
