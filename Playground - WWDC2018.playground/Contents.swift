@@ -11,6 +11,7 @@ class MyViewController : UIViewController {
         
         mylabel.frame = CGRect(x: 30, y: 30, width: 400, height: 150)
         
+        
         let view = UIView()
         self.view = view
         let earth = Earth()

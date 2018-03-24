@@ -14,6 +14,7 @@ public class Story{
     
     private var arrayText: [String]
     private var arrayBack: [Int]
+    private var arrayDelay:[TimeInterval]
 //    private var arrayColor: [UIColor]
 //    private var arraySize: [CGFloat]
 //    private var arraySizeImp: [CGFloat]
@@ -30,6 +31,7 @@ public class Story{
         
         self.arrayText = []
         self.arrayBack = []
+        self.arrayDelay = []
 
 //        self.arrayColor = []
 //        self.arraySize = []
@@ -75,7 +77,13 @@ public class Story{
         let back1 = 0
         let back2 = 1
         let back3 = 2
-        self.arrayBack = [back1, back1, back1, back1, back2, back2, back3, back3, back3, back3]
+        self.arrayBack = [back1, back1, back1, back1, back1, back3, back3, back3, back3, back3]
+        
+        //Delay
+        let delay1: TimeInterval = 0
+        let delay2: TimeInterval = 3
+        self.arrayDelay = [delay1, delay1, delay1, delay1, delay1, delay2, delay1, delay1, delay1, delay1]
+        
         
         self.arrayText = arrayText1
         self.text = arrayText[i]
@@ -93,7 +101,10 @@ public class Story{
     public func chooseBack(i:Int) -> Int{
         return arrayBack[i]
     }
-    
+
+    public func chooseDelay(i:Int) -> TimeInterval{
+        return arrayDelay[i]
+    }
 //    public func chooseStory(i: Int){
 //        self.text = self.arrayText[i]
 //        self.textColor = self.arrayColor[i]
