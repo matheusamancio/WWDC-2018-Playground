@@ -39,10 +39,10 @@ public extension UIColor{
     }
 }
 
-public extension UILabel {
-    public func fadeIn(duration: TimeInterval) {
+public extension UIView {
+    public func fadeInColor(duration: TimeInterval, color: UIColor) {
         UIView.animate(withDuration: duration) {
-            self.alpha = 1.0
+            self.backgroundColor = color
         }
     }
     public func fadeOut(duration: TimeInterval) {

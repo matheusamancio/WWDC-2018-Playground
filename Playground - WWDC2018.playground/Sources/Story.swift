@@ -2,14 +2,22 @@ import Foundation
 import UIKit
 
 
-public class Texts{
+public class Story{
     
     private var text: String
     private var textColor: UIColor
     private var textSize: CGFloat
     private var textImpactSize: CGFloat
     private var rangeTextImpact: (Int,Int)
+    private var indBackGroundColor: Int
     private var ind: Int
+    
+    private var arrayText: [String]
+    private var arrayBack: [Int]
+//    private var arrayColor: [UIColor]
+//    private var arraySize: [CGFloat]
+//    private var arraySizeImp: [CGFloat]
+//    private var arrayRangeImp: [(Int, Int)]
     
     public init(i: Int){
         self.text = String()
@@ -17,8 +25,18 @@ public class Texts{
         self.textSize = CGFloat()
         self.textImpactSize = CGFloat()
         self.rangeTextImpact = (0,0)
+        self.indBackGroundColor = 0
         self.ind = 0
-        self.autoAppend(i:i)
+        
+        self.arrayText = []
+        self.arrayBack = []
+
+//        self.arrayColor = []
+//        self.arraySize = []
+//        self.arraySizeImp = []
+//        self.arrayRangeImp = []
+        
+        self.autoAppend(i: i)
     }
     
     private func autoAppend(i: Int){
@@ -31,7 +49,7 @@ public class Texts{
         let text5 = "Do you know that i'm sofering about deforestation? "
         let text6 = "more than 13Mi hectares are cutted out every Year"
         let text7 = "... And this is only one thing that I'm sad"
-        let arrayText = [text0, text1, text2, text3, text4, text5, text6, text7]
+        let arrayText1 = [text0, text1, text2, text3, text4, text5, text6, text7]
         
         //textColor
         let colorTextBlack = UIColor.black
@@ -53,12 +71,37 @@ public class Texts{
         let rangeImp1 = (10,4)
         let arrayRangeImp = [noRange, noRange, noRange, noRange, noRange, noRange, rangeImp1, noRange, noRange, noRange]
         
+        //FlagBackGroundColor
+        let back1 = 0
+        let back2 = 1
+        let back3 = 2
+        self.arrayBack = [back1, back1, back1, back1, back2, back2, back3, back3, back3, back3]
+        
+        self.arrayText = arrayText1
         self.text = arrayText[i]
         self.textColor = arrayColor[i]
         self.textSize = arraySize[i]
         self.textImpactSize = arraySizeImp[i]
         self.rangeTextImpact = arrayRangeImp[i]
     }
+    
+    public func chooseTest(i:Int) -> String{
+        return arrayText[i]
+    }
+    
+    
+    public func chooseBack(i:Int) -> Int{
+        return arrayBack[i]
+    }
+    
+//    public func chooseStory(i: Int){
+//        self.text = self.arrayText[i]
+//        self.textColor = self.arrayColor[i]
+//        self.textSize = self.arraySize[i]
+//        self.textImpactSize = self.arraySizeImp[i]
+//        self.rangeTextImpact = self.arrayRangeImp[i]
+//    }
+    
     public func getTexts() -> String{
         return self.text
     }
@@ -76,7 +119,6 @@ public class Texts{
     }
     public func nextSentence(){
         self.ind = self.ind + 1
-        self.autoAppend(i:ind)
     }
 }
 

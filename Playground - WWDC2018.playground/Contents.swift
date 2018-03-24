@@ -2,10 +2,8 @@
   
 import UIKit
 import PlaygroundSupport
-let scene = Scene()
 var mylabel = UILabel()
-let text = Texts(i: 0)
-
+var scene: Scenes?
 
 
 class MyViewController : UIViewController {
@@ -14,7 +12,6 @@ class MyViewController : UIViewController {
         mylabel.frame = CGRect(x: 30, y: 30, width: 400, height: 150)
         
         let view = UIView()
-        view.backgroundColor = scene.getBackgroundColor()
         self.view = view
         let earth = Earth()
         let globe = earth.getGlobe()
@@ -42,52 +39,11 @@ class MyViewController : UIViewController {
         
         earth.moveToLeft(image: cloud1)
         earth.moveToRight(image: cloud2)
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(MyViewController.goToFirstSentence), userInfo: nil, repeats: false)
-        startAnimation()
-    }
-    
-    
-    func startAnimation(){
-        var time: TimeInterval = 6
-        Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(MyViewController.goToPatternSentence), userInfo: nil, repeats: false)
-        time = time + 4
-    }
-    
-    
-    @objc func goToFirstSentence() {
-        fadeOutIn(text: text)
-    }
-    @objc func goToPatternSentence() {
-       text.nextSentence()
-        fadeOutIn(text: text)
         
+        scene = Scenes(view: self.view, label: mylabel)
+        scene?.sceneSequency(i: 0)
     }
 
-    @objc func goToSixthScene() {
-        mylabel.fadeOut(duration: 1)
-        scene.secondScene(view: view)
-    }
-    
-    func fadeOutIn(text: Texts){
-//        mylabel.fadeOut(duration: 1)
-//        let lbl = LabelBuilder(text: text)
-//        mylabel.attributedText = lbl.getLabel().attributedText
-//        mylabel.textColor = lbl.getLabel().textColor
-//        mylabel.fadeIn(duration: 1)
-
-        UIView.animate(withDuration: 1, animations: {
-            mylabel.alpha = 0
-        }) { (true) in
-            let lbl = LabelBuilder(text: text)
-            mylabel.attributedText = lbl.getLabel().attributedText
-            mylabel.textColor = lbl.getLabel().textColor
-            UIView.animate(withDuration: 1) {
-                mylabel.alpha = 1
-                self.startAnimation()
-            }
-        }
-    }
-    
 }
 // Present the view controller in the Live View window
 PlaygroundPage.current.liveView = MyViewController()
