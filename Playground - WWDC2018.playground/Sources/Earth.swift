@@ -4,14 +4,18 @@ import UIKit
 
 public class Earth{
     
+    private var border: UIView
     private var globe: UIView
     private var water: UIView
     private var cloud1: UIImageView
     private var cloud2: UIImageView
     private var continent1: UIImageView
     private var continent2: UIImageView
+
+
     
     public init(){
+        self.border = UIView()
         self.globe = UIView()
         self.water = UIView()
         self.cloud1 = UIImageView()
@@ -19,6 +23,7 @@ public class Earth{
         self.continent1 = UIImageView()
         self.continent2 = UIImageView()
         
+        self.setBorder()
         self.setGlobe()
         self.setWater()
         self.setCloud(cloud: self.cloud1)
@@ -28,9 +33,16 @@ public class Earth{
     }
     
     
-    func setGlobe(){
+    func setBorder(){
         self.globe.frame.size.height = 350
         self.globe.frame.size.width = 350
+        self.globe.backgroundColor = UIColor.globeColor()
+        self.globe.layer.cornerRadius = self.globe.frame.size.height/2
+    }
+
+    func setGlobe(){
+        self.globe.frame.size.height = 328
+        self.globe.frame.size.width = 328
         self.globe.backgroundColor = UIColor.globeColor()
         self.globe.layer.cornerRadius = self.globe.frame.size.height/2
     }
@@ -60,6 +72,9 @@ public class Earth{
         }
     }
     
+    public func getBorder() -> UIView{
+        return self.border
+    }
     public func getGlobe() -> UIView{
         return self.globe
     }
@@ -93,5 +108,11 @@ public class Earth{
         UIView.animate(withDuration: 10.7, delay: 0.3, options: [.curveLinear],
                        animations: {image.center.x -= 120},
                        completion: {_ in self.moveToRight(image: image)})
+    }
+    
+    public func removeWater(view: UIView) {
+        UIView.animate(withDuration: 15) {
+            view.center.y += 400
+        }
     }
 }
