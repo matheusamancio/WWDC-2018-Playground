@@ -110,9 +110,9 @@ public class Earth{
                        completion: {_ in self.moveToRight(image: image)})
     }
     
-    public func removeWater(view: UIView) {
+    public func removeWater() {
         UIView.animate(withDuration: 15) {
-            view.center.y += 400
+            self.water.center.y += 400
         }
     }
 }

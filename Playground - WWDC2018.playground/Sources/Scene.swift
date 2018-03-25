@@ -46,7 +46,6 @@ public class Scenes{
         
         earth.moveToLeft(image: cloud1)
         earth.moveToRight(image: cloud2)
-        earth.removeWater(view: water)
 
                 
     }
@@ -59,11 +58,24 @@ public class Scenes{
         self.whichbackgroundColor(i:backgroundColor)
         self.fadeOutInLabel(text:text, textColor: textColor, delay: delay)
         let id = i + 1
+        event(i: i)
         DispatchQueue.main.asyncAfter(deadline: .now() + 4 + delay) {
             self.sceneSequency(i: id)
         }
     }
-    
+    func event(i: Int){
+        switch i {
+        case 5:
+            earth.removeWater()
+        case 10:
+            print(#function,"case 10")
+        case 14:
+            print(#function,"case 14")
+        default:
+            print(#function,"default")
+        }
+        
+    }
     func whichbackgroundColor(i:Int){
         if changeBackground !=  i{
             switch i {
