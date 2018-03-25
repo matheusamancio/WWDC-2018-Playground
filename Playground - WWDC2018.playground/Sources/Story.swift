@@ -42,20 +42,33 @@ public class Story{
     
     private func autoAppend(i: Int){
         // texts
-        let text0 = "Hi, I'm Earth..."
-        let text1 = "Are you my friend?"
-        let text2 = "So if you're, I will tell something"
-        let text3 = "I'm sad... You know why..."
-        let text4 = "Don't you?"
-        let text5 = "Do you know that i'm sofering about deforestation? "
-        let text6 = "more than 13Mi hectares are cutted out every Year"
-        let text7 = "... And this is only one thing that I'm sad"
-        let arrayText1 = [text0, text1, text2, text3, text4, text5, text6, text7]
+        let t0 = "Hi, I'm Earth..."
+        let t1 = "I'm here to tell you something"
+        let t2 = "…"
+        let t3 = "I'm sad"
+        let t4 = "…"
+        let t5 = "I'm sad because my clean water is ending"
+        let t6 = "There are people that wastes water"
+        let t7 = "about 20% of the water is wasted"
+        let t8 = "and because of that, there are some of you without clean water to drink"
+        let t9 = "... And this is only one thing that I'm sad"
+        let t10 = "But I'm beeing sick"
+        let t11 = "The doctor said something called Deforestation?"
+        let t12 = "Do you know somithing about it?"
+        let t13 = "More than 13Mi hectares are cutted out of me"
+        let t14 = "And without plants, I can't change carbone to oxigen"
+        let t15 = "The doctor said something called Carbone"
+        let t16 = "He said that every year you are emiting 1.5 tons of carbon"
+        let t17 = "And about 80% of industries emmiting carbons blatanly"
+        let t18 = "..."
+        let t19 = "I need Help"
+        let arrayText1 = [t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19]
         
+
         //textColor
-        let colorTextBlack = UIColor.black
-        let colorTextWhite = UIColor.white
-        self.arrayTextColor = [colorTextBlack, colorTextBlack,colorTextBlack,colorTextBlack,colorTextBlack,colorTextWhite, colorTextWhite, colorTextWhite, colorTextWhite, colorTextWhite, colorTextWhite]
+        let cB = UIColor.black
+        let cW = UIColor.white
+        self.arrayTextColor = [cB,cB,cB,cB,cB,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW]
         
         //textSize
         let size1: CGFloat = 12
@@ -73,15 +86,15 @@ public class Story{
         let arrayRangeImp = [noRange, noRange, noRange, noRange, noRange, noRange, rangeImp1, noRange, noRange, noRange]
         
         //FlagBackGroundColor
-        let back1 = 0
-        let back2 = 1
-        let back3 = 2
-        self.arrayBack = [back1, back1, back1, back1, back1, back3, back3, back3, back3, back2]
+        let b1 = 0
+        let b2 = 1
+        let b3 = 2
+        self.arrayBack = [b1,b1,b1,b1,b1,b2,b2,b2,b2,b2,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3]
         
         //Delay
-        let delay1: TimeInterval = 0
-        let delay2: TimeInterval = 3
-        self.arrayDelay = [delay1, delay1, delay1, delay1, delay1, delay2, delay1, delay1, delay1, delay1]
+        let d1: TimeInterval = 0
+        let d2: TimeInterval = 3
+        self.arrayDelay = [d1,d1,d1,d1,d1,d2,d1,d1,d1,d1,d2,d1,d1,d1,d1,d1,d1,d1,d1,d1]
         
         
         self.arrayText = arrayText1
