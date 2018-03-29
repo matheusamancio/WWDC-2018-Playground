@@ -28,16 +28,18 @@ public class Scenes{
         let continentSmoked1 = self.earth.getContinentSmoked1()
         let continentSmoked2 = self.earth.getContinentSmoked2()
         
-        
-        border.center = CGPoint(x: 190, y: 300)
-        globe.center = CGPoint(x: 190, y: 300)
-        water.center = CGPoint(x: globe.frame.height/2, y: globe.frame.width/2)
-        cloud1.center = CGPoint(x: 260, y: 245)
-        cloud2.center = CGPoint(x: 120, y: 380)
-        continent1.center = CGPoint(x: 190, y: 220)
-        continent2.center = CGPoint(x: 120, y: 360)
-        continentSmoked1.center = CGPoint(x: 190, y: 220)
-        continentSmoked2.center = CGPoint(x: 120, y: 360)
+        let centerWidth = view.frame.width/2
+        let centerHeight = view.frame.height/2
+
+        border.center = CGPoint(x: centerWidth, y: centerHeight)
+        globe.center = CGPoint(x: centerWidth, y: centerHeight)
+        water.center = CGPoint(x: globe.frame.width/2, y: globe.frame.height/2)
+        cloud1.center = CGPoint(x: centerWidth + 60, y: centerHeight + 40)
+        cloud2.center = CGPoint(x: centerWidth - 60, y: centerHeight - 70)
+        continent1.center = CGPoint(x: centerWidth, y: centerHeight - 80)
+        continent2.center = CGPoint(x: centerWidth - 60, y: centerHeight + 50)
+        continentSmoked1.center = CGPoint(x: centerWidth, y: centerHeight - 80)
+        continentSmoked2.center = CGPoint(x: centerWidth - 60, y: centerHeight + 50)
         
         globe.layer.masksToBounds = true
         self.view.addSubview(border)

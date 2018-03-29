@@ -43,7 +43,7 @@ public class Earth{
         self.globe.frame.size.height = 350
         self.globe.frame.size.width = 350
         self.globe.backgroundColor = UIColor.globeColor()
-        self.globe.layer.cornerRadius = self.globe.frame.size.height/2
+        self.globe.layer.cornerRadius = self.border.frame.size.height/2
     }
 
     func setGlobe(){
