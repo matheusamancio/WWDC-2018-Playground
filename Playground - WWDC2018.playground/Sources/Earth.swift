@@ -48,10 +48,10 @@ public class Earth{
     }
     
     func setWater(){
-        self.water.frame.size.height = 328
-        self.water.frame.size.width = 328
+        self.water.frame.size.height = 500
+        self.water.frame.size.width = 500
         self.water.backgroundColor = UIColor.waterColor()
-        self.water.layer.cornerRadius = self.water.frame.size.height/2
+//        self.water.layer.cornerRadius = self.water.frame.size.height/2
     }
     
     func setCloud(cloud: UIImageView){
@@ -112,7 +112,7 @@ public class Earth{
     
     public func removeWater() {
         UIView.animate(withDuration: 15) {
-            self.water.center.y += 400
+            self.water.center.y += 500
         }
     }
 }

@@ -15,7 +15,7 @@ class MyViewController : UIViewController {
         self.view = view
 
         scene = Scenes(view: self.view, label: mylabel)
-        scene?.sceneSequency(i: 0)
+        scene?.sceneSequency(i: 5)
     }
 
 }
