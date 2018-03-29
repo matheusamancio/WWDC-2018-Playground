@@ -25,6 +25,9 @@ public class Scenes{
         let cloud2 = self.earth.getCloud2()
         let continent1 = self.earth.getContinent1()
         let continent2 = self.earth.getContinent2()
+        let continentSmoked1 = self.earth.getContinentSmoked1()
+        let continentSmoked2 = self.earth.getContinentSmoked2()
+        
         
         border.center = CGPoint(x: 190, y: 300)
         globe.center = CGPoint(x: 190, y: 300)
@@ -33,6 +36,8 @@ public class Scenes{
         cloud2.center = CGPoint(x: 120, y: 380)
         continent1.center = CGPoint(x: 190, y: 220)
         continent2.center = CGPoint(x: 120, y: 360)
+        continentSmoked1.center = CGPoint(x: 190, y: 220)
+        continentSmoked2.center = CGPoint(x: 120, y: 360)
         
         globe.layer.masksToBounds = true
         self.view.addSubview(border)
@@ -40,15 +45,20 @@ public class Scenes{
         globe.addSubview(water)
         self.view.addSubview(continent1)
         self.view.addSubview(continent2)
+        self.view.addSubview(continentSmoked1)
+        self.view.addSubview(continentSmoked2)
         self.view.addSubview(cloud1)
         self.view.addSubview(cloud2)
         self.view.addSubview(self.label)
         
         earth.moveToLeft(image: cloud1)
         earth.moveToRight(image: cloud2)
-
-                
     }
+    
+    
+    
+    
+    
     
     public func sceneSequency(i: Int){
         let delay = story.chooseDelay(i: i)
@@ -69,6 +79,7 @@ public class Scenes{
             earth.removeWater()
         case 10:
             print(#function,"case 10")
+            earth.SmokeContinents()
         case 14:
             print(#function,"case 14")
         default:

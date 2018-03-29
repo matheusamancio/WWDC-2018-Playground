@@ -11,6 +11,8 @@ public class Earth{
     private var cloud2: UIImageView
     private var continent1: UIImageView
     private var continent2: UIImageView
+    private var continentSmoked1: UIImageView
+    private var continentSmoked2: UIImageView
 
 
     
@@ -22,6 +24,8 @@ public class Earth{
         self.cloud2 = UIImageView()
         self.continent1 = UIImageView()
         self.continent2 = UIImageView()
+        self.continentSmoked1 = UIImageView()
+        self.continentSmoked2 = UIImageView()
         
         self.setBorder()
         self.setGlobe()
@@ -30,6 +34,8 @@ public class Earth{
         self.setCloud(cloud: self.cloud2)
         self.setContinent(continent: self.continent1, flag: 1)
         self.setContinent(continent: self.continent2, flag: 2)
+        self.setContinent(continent: self.continentSmoked1, flag: 3)
+        self.setContinent(continent: self.continentSmoked2, flag: 4)
     }
     
     
@@ -61,15 +67,30 @@ public class Earth{
     }
     
     func setContinent(continent: UIImageView, flag: Int){
-        if flag == 1{
+        switch flag {
+        case 1:
             continent.frame.size.height = 65
             continent.frame.size.width = 228
             continent.image = #imageLiteral(resourceName: "icontinent1.png")
-        }else{
+        case 2:
             continent.frame.size.height = 96
             continent.frame.size.width = 132
             continent.image = #imageLiteral(resourceName: "icontnent2.png")
+        case 3:
+            continent.frame.size.height = 65
+            continent.frame.size.width = 228
+            continent.image = #imageLiteral(resourceName: "iContinentPolution1.png")
+            continent.alpha = 0
+        case 4:
+            continent.frame.size.height = 96
+            continent.frame.size.width = 132
+            continent.image = #imageLiteral(resourceName: "iContinetPolution2.png")
+            continent.alpha = 0
+        default:
+           print(#function,"Default")
+
         }
+
     }
     
     public func getBorder() -> UIView{
@@ -94,6 +115,13 @@ public class Earth{
         return self.continent2
     }
     
+    public func getContinentSmoked1() -> UIImageView{
+        return self.continentSmoked1
+    }
+    public func getContinentSmoked2() -> UIImageView{
+        return self.continentSmoked2
+    }
+    
     public func moveToRight(image: UIImageView) {
         
         UIView.animate(withDuration: 10.3, delay: 0.0, options: [.curveLinear],
@@ -115,4 +143,12 @@ public class Earth{
             self.water.center.y += 500
         }
     }
+    
+    public func SmokeContinents() {
+        UIView.animate(withDuration: 3) {
+            self.continentSmoked1.alpha = 1
+            self.continentSmoked2.alpha = 1
+        }
+    }
+    
 }
