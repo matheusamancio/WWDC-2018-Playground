@@ -1,10 +1,9 @@
-//: A UIKit based Playground for presenting user interface
-  
+//#-hidden-code
+
 import UIKit
 import PlaygroundSupport
 var mylabel = UILabel()
 var scene: Scenes?
-
 
 class MyViewController : UIViewController {
     override func loadView() {
@@ -16,8 +15,18 @@ class MyViewController : UIViewController {
 
         scene = Scenes(view: self.view, label: mylabel)
         scene?.sceneSequency(i: 9)
+        
     }
-
 }
 // Present the view controller in the Live View window
 PlaygroundPage.current.liveView = MyViewController()
+PlaygroundPage.current.needsIndefiniteExecution = true
+//#-end-hidden-code
+/*:
+ ## Hi I'm Earth
+ Hi, I'm Earth is a animation, that you will have a day by day conversation with earth.
+ ## Prepare the popcorn and your hurt.
+ You will need to get involved and Do something in the end
+ try and have some fun!
+ */
+
