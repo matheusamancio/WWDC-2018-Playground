@@ -40,50 +40,50 @@ public class Earth{
     
     
     func setBorder(){
-        self.border.frame.size.height = 350
-        self.border.frame.size.width = 350
+        self.border.frame.size.height = 200
+        self.border.frame.size.width = 200
         self.border.backgroundColor = UIColor.globeColor()
         self.border.layer.cornerRadius = self.border.frame.size.height/2
     }
 
     func setGlobe(){
-        self.globe.frame.size.height = 328
-        self.globe.frame.size.width = 328
+        self.globe.frame.size.height = 190
+        self.globe.frame.size.width = 190
         self.globe.backgroundColor = UIColor.globeColor()
         self.globe.layer.cornerRadius = self.globe.frame.size.height/2
     }
     
     func setWater(){
-        self.water.frame.size.height = 500
-        self.water.frame.size.width = 500
+        self.water.frame.size.height = 200
+        self.water.frame.size.width = 200
         self.water.backgroundColor = UIColor.waterColor()
 //        self.water.layer.cornerRadius = self.water.frame.size.height/2
     }
     
     func setCloud(cloud: UIImageView){
-        cloud.frame.size.height = 94
-        cloud.frame.size.width = 242
+        cloud.frame.size.height = 54
+        cloud.frame.size.width = 140
         cloud.image = #imageLiteral(resourceName: "icloud.png")
     }
     
     func setContinent(continent: UIImageView, flag: Int){
         switch flag {
         case 1:
-            continent.frame.size.height = 65
-            continent.frame.size.width = 228
+            continent.frame.size.height = 37
+            continent.frame.size.width = 132
             continent.image = #imageLiteral(resourceName: "icontinent1.png")
         case 2:
-            continent.frame.size.height = 96
-            continent.frame.size.width = 132
+            continent.frame.size.height = 55
+            continent.frame.size.width = 76
             continent.image = #imageLiteral(resourceName: "icontnent2.png")
         case 3:
-            continent.frame.size.height = 65
-            continent.frame.size.width = 228
+            continent.frame.size.height = 37
+            continent.frame.size.width = 132
             continent.image = #imageLiteral(resourceName: "iContinentPolution1.png")
             continent.alpha = 0
         case 4:
-            continent.frame.size.height = 96
-            continent.frame.size.width = 132
+            continent.frame.size.height = 55
+            continent.frame.size.width = 76
             continent.image = #imageLiteral(resourceName: "iContinetPolution2.png")
             continent.alpha = 0
         default:

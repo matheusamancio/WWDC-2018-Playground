@@ -34,12 +34,12 @@ public class Scenes{
         border.center = CGPoint(x: centerWidth, y: centerHeight)
         globe.center = CGPoint(x: centerWidth, y: centerHeight)
         water.center = CGPoint(x: globe.frame.width/2, y: globe.frame.height/2)
-        cloud1.center = CGPoint(x: centerWidth + 60, y: centerHeight + 40)
-        cloud2.center = CGPoint(x: centerWidth - 60, y: centerHeight - 70)
-        continent1.center = CGPoint(x: centerWidth, y: centerHeight - 80)
-        continent2.center = CGPoint(x: centerWidth - 60, y: centerHeight + 50)
-        continentSmoked1.center = CGPoint(x: centerWidth, y: centerHeight - 80)
-        continentSmoked2.center = CGPoint(x: centerWidth - 60, y: centerHeight + 50)
+        cloud1.center = CGPoint(x: centerWidth + 60, y: centerHeight + 15)
+        cloud2.center = CGPoint(x: centerWidth - 60, y: centerHeight - 50)
+        continent1.center = CGPoint(x: centerWidth, y: centerHeight - 35)
+        continent2.center = CGPoint(x: centerWidth - 40, y: centerHeight + 30)
+        continentSmoked1.center = CGPoint(x: centerWidth, y: centerHeight - 35)
+        continentSmoked2.center = CGPoint(x: centerWidth - 40, y: centerHeight + 30)
         
         globe.layer.masksToBounds = true
         self.view.addSubview(border)
