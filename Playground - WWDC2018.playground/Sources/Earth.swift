@@ -40,10 +40,10 @@ public class Earth{
     
     
     func setBorder(){
-        self.globe.frame.size.height = 350
-        self.globe.frame.size.width = 350
-        self.globe.backgroundColor = UIColor.globeColor()
-        self.globe.layer.cornerRadius = self.border.frame.size.height/2
+        self.border.frame.size.height = 350
+        self.border.frame.size.width = 350
+        self.border.backgroundColor = UIColor.globeColor()
+        self.border.layer.cornerRadius = self.border.frame.size.height/2
     }
 
     func setGlobe(){
