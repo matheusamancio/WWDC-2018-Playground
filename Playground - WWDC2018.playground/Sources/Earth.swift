@@ -160,9 +160,23 @@ public class Earth{
             self.continentSmoked2.alpha = 0
         }
     }
+    public func cloudPolution() {
+        UIView.animate(withDuration: 5) {
+            self.cloud1.alpha = 0.48
+            self.cloud2.alpha = 0.48
+        }
+    }
+    public func removeCloudPolution() {
+        UIView.animate(withDuration: 5) {
+            self.cloud1.alpha = 1
+            self.cloud2.alpha = 1
+        }
+    }
+    
     public func saveEarth(){
         removeSmokeContinents()
         appearWater()
+        removeCloudPolution()
     }
     
     

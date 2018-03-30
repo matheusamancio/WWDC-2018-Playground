@@ -81,12 +81,12 @@ public class Scenes{
     func savingEarth(){
         self.label.alpha = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-            self.whichbackgroundColor(i:0)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-                self.earth.saveEarth()
+            self.earth.saveEarth()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 9){
+                self.whichbackgroundColor(i:0)
                 let text = self.story.chooseText(i: 0)
                 let textColor = self.story.chooseTextColor(i:0)
-                self.fadeOutInLabel(text:text, textColor: textColor, delay: 10)
+                self.fadeOutInLabel(text:text, textColor: textColor, delay: 3)
             }
         }
         
@@ -95,12 +95,14 @@ public class Scenes{
     func event(i: Int){
         switch i {
         case 5:
+            print(#function,"Remove Water")
             earth.removeWater()
         case 10:
-            print(#function,"case 10")
+            print(#function,"smoke the Continents")
             earth.SmokeContinents()
         case 14:
-            print(#function,"case 14")
+            print(#function,"Clouds Polution")
+            earth.cloudPolution()
         default:
             print(#function,"default")
         }
