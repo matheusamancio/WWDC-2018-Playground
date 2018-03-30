@@ -8,7 +8,6 @@ public class Scenes{
     private var earth: Earth
     var changeBackground = 3
     
-    
     public init(view: UIView, label: UILabel){
         self.view = view
         self.label = label
@@ -30,7 +29,7 @@ public class Scenes{
         
         let centerWidth = view.frame.width/2
         let centerHeight = view.frame.height/2
-
+        
         border.center = CGPoint(x: centerWidth, y: centerHeight)
         globe.center = CGPoint(x: centerWidth, y: centerHeight)
         water.center = CGPoint(x: globe.frame.width/2, y: globe.frame.height/2)
@@ -71,10 +70,28 @@ public class Scenes{
         self.fadeOutInLabel(text:text, textColor: textColor, delay: delay)
         let id = i + 1
         event(i: i)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4 + delay) {
-            self.sceneSequency(i: id)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1 + delay) {
+            if i <= 18{
+                self.sceneSequency(i: id)
+            }else{
+                self.savingEarth()
+            }
         }
     }
+    func savingEarth(){
+        self.label.alpha = 0
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+            self.whichbackgroundColor(i:0)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                self.earth.saveEarth()
+                let text = self.story.chooseText(i: 0)
+                let textColor = self.story.chooseTextColor(i:0)
+                self.fadeOutInLabel(text:text, textColor: textColor, delay: 10)
+            }
+        }
+        
+    }
+    
     func event(i: Int){
         switch i {
         case 5:

@@ -143,12 +143,27 @@ public class Earth{
             self.water.center.y += 500
         }
     }
-    
+    public func appearWater() {
+        UIView.animate(withDuration: 10) {
+            self.water.center.y -= 500
+        }
+    }
     public func SmokeContinents() {
         UIView.animate(withDuration: 3) {
             self.continentSmoked1.alpha = 1
             self.continentSmoked2.alpha = 1
         }
     }
+    public func removeSmokeContinents() {
+        UIView.animate(withDuration: 5) {
+            self.continentSmoked1.alpha = 0
+            self.continentSmoked2.alpha = 0
+        }
+    }
+    public func saveEarth(){
+        removeSmokeContinents()
+        appearWater()
+    }
+    
     
 }

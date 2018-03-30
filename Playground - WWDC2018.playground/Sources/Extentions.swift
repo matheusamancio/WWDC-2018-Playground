@@ -39,6 +39,8 @@ public extension UIColor{
     }
 }
 
+
+
 public extension UIView {
     public func fadeInColor(duration: TimeInterval, color: UIColor) {
         UIView.animate(withDuration: duration) {

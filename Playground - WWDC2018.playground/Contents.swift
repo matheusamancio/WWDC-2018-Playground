@@ -8,7 +8,7 @@ var scene: Scenes?
 let viewteste = UIView(frame: CGRect(x: 0, y: 0, width: 700, height: 400))
 mylabel.frame = CGRect(x: 30, y: 30, width: 400, height: 150)
 scene = Scenes(view: viewteste, label: mylabel)
-scene?.sceneSequency(i: 9)
+scene?.sceneSequency(i: 0)
 
 
 //class MyViewController : UIViewController {
