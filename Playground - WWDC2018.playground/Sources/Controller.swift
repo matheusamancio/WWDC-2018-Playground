@@ -61,7 +61,6 @@ public class Controller{
     }
     
     func changeToQuiz() {
-        viewScene.removeFromSuperview()
         startQuiz()
     }
     

@@ -18,6 +18,13 @@ public extension UIColor{
     public class func continentPolutionColor() -> UIColor{
         return UIColor(red: 86.0/255.0, green: 88.0/255.0, blue: 90.0/255.0, alpha: 1)
     }
+    public class func quizBackgroundColor() -> UIColor{
+        return UIColor(red: 127.0/255.0, green: 127.0/255.0, blue: 127.0/255.0, alpha: 0.63)
+    }
+    public class func quizButtonTextColor() -> UIColor{
+        return UIColor(red: 127.0/255.0, green: 127.0/255.0, blue: 127.0/255.0, alpha: 1)
+    }
+    
     // Scarcity
     public class func scarcityBackgroundColor() -> UIColor{
         return UIColor(red: 66.0/255.0, green: 33.0/255.0, blue: 57.0/255.0, alpha: 1)

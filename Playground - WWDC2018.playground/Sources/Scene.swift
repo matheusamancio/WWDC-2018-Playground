@@ -9,7 +9,7 @@ public class Scenes{
     public var goToQuestions: (()->())?
     var identifier: Int{
         didSet {
-            if identifier == 19{
+            if identifier == 22{
                 goToQuestions?()
             }
         }
@@ -84,7 +84,7 @@ public class Scenes{
     
     public func sceneSequency(i: Int){
         identifier = i
-        if i <= 19{
+        if i <= 22{
             let delay = story.chooseDelay(i: i)
             let text = story.chooseText(i: i)
             let textColor = story.chooseTextColor(i:i)
@@ -93,13 +93,16 @@ public class Scenes{
             self.fadeOutInLabel(text:text, textColor: textColor, delay: delay)
             let id = i + 1
             event(i: i)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3 + delay) {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0 + delay) {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+
                 self.sceneSequency(i: id)
             }
         }
     }
     
     public func savingEarth(){
+        earth.moveMoon(center: view.center)
         self.label.alpha = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             self.earth.saveEarth()
@@ -114,13 +117,13 @@ public class Scenes{
     
     func event(i: Int){
         switch i {
-        case 5:
+        case 7:
             print(#function,"Remove Water")
             earth.removeWater()
-        case 10:
+        case 13:
             print(#function,"smoke the Continents")
             earth.SmokeContinents()
-        case 14:
+        case 17:
             print(#function,"Clouds Polution")
             earth.cloudPolution()
         default:

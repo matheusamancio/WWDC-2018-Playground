@@ -33,9 +33,7 @@ public class Story{
         self.arrayBack = []
         self.arrayDelay = []
         self.arrayTextColor = []
-//        self.arraySize = []
-//        self.arraySizeImp = []
-//        self.arrayRangeImp = []
+
         
         self.autoAppend(i: i)
     }
@@ -46,29 +44,33 @@ public class Story{
         let t1 = "I'm here to tell you something"
         let t2 = "…"
         let t3 = "I'm sad"
-        let t4 = "because my clean water is running out"
-        let t5 = "every minute X litres are wasted around the world"
-        let t6 = "844 million people don’t have clean water"
-        let t7 = " ... And this is only one thing that I'm sad"
-        let t8 = "because I'm beeing sick too"
-        let t9 = "The doctor said something called pollution?"
-        let t10 = "have you heard of it?"
-        let t11 = "the symptoms are affecting my land"
-        let t12 = "and what about this carbone"
-        let t13 = "This carbone is killing me"
-        let t14 = "It's killing You"
-        let t15 = "The weather is changing"
-        let t16 = "My temperature is growing sky-high"
-        let t17 = "..."
-        let t18 = "I need Help"
-        let t19 = ""
-        let arrayText1 = [t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19]
+        let t4 = "Has been quite a while since i'm feeling sick"
+        let t5 = "I used to have blue oceans and clean water for everyone"
+        let t6 = "and now it's running out"
+        let t7 = "every minute X litres are wasted around the world"
+        let t8 = "and 844 million people don’t have clean water"
+        let t9 = " ... furthermore"
+        let t10 = "my lungs are beeing affected as well"
+        let t11 = "The doctor said something called carbon pollution"
+        let t12 = "have you heard of it?"
+        let t13 = "I'm losing 24 billion tonnes of topsoil each year because of land pollution"
+        let t14 = "This carbon is killing me"
+        let t15 = "It's killing You"
+        let t16 = "and I'm getting fever"
+        let t17 = "since the centure XIX my temperature grow 1,02%"
+        let t18 = "does not seems like much?"
+        let t19 = "but many species are being extinct"
+        let t20 = "..."
+        let t21 = "I need Help"
+        let t22 = ""
+        
+        let arrayText1 = [t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19, t20, t21, t22]
         
 
         //textColor
         let cB = UIColor.black
         let cW = UIColor.white
-        self.arrayTextColor = [cB,cB,cB,cB,cB,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW]
+        self.arrayTextColor = [cB,cB,cB,cB,cB,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW]
         
         //textSize
         let size1: CGFloat = 12
@@ -89,12 +91,12 @@ public class Story{
         let b1 = 0
         let b2 = 1
         let b3 = 2
-        self.arrayBack = [b1,b1,b1,b1,b1,b2,b2,b2,b2,b2,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3]
+        self.arrayBack = [b1,b1,b1,b1,b1,b2,b2,b2,b2,b2,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3]
         
         //Delay
         let d1: TimeInterval = 0
         let d2: TimeInterval = 3
-        self.arrayDelay = [d1,d1,d1,d1,d1,d2,d1,d1,d1,d1,d2,d1,d1,d1,d1,d1,d1,d1,d1,d1]
+        self.arrayDelay = [d1,d1,d1,d1,d1,d2,d1,d1,d1,d1,d2,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1]
         
         
         self.arrayText = arrayText1
