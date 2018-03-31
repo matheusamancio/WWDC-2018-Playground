@@ -2,11 +2,9 @@
 
 import UIKit
 import PlaygroundSupport
-var scene: Scenes?
-
 let viewteste = UIView(frame: CGRect(x: 0, y: 0, width: 700, height: 400))
-scene = Scenes(view: viewteste)
-scene?.sceneSequency(i: 0)
+var controller: Controller?
+controller = Controller(view:viewteste)
 
 
 
