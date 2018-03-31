@@ -71,7 +71,7 @@ public class Scenes{
         
         earth.moveToLeft(image: cloud1)
         earth.moveToRight(image: cloud2)
-        earth.moveMoon(center: self.view.center)
+        earth.moveMoon(center: globe.center)
     }
     public func getView() -> UIView{
         return self.view

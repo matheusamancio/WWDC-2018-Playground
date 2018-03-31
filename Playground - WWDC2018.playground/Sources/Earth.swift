@@ -45,7 +45,7 @@ public class Earth{
     func setMoon(){
         self.moon.frame.size.height = 20
         self.moon.frame.size.width = 20
-        self.moon.backgroundColor = UIColor.gray
+        self.moon.backgroundColor = UIColor.lightGray
         self.moon.layer.cornerRadius = self.moon.frame.size.height/2
     }
     
