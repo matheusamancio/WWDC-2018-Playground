@@ -6,17 +6,26 @@ public class Scenes{
     private var label: UILabel
     private var story: Story
     private var earth: Earth
+    public var goToQuestions: (()->())?
+    var identifier: Int{
+        didSet {
+            if identifier == 19{
+                goToQuestions?()
+            }
+        }
+    }
+    
     var changeBackground = 3
     
     public init(){
-        self.view = UIView()
+        self.identifier = Int()
+        self.view = UIView(frame: CGRect(x: 0, y: 0, width: 700, height: 400))
         self.label = UILabel()
         self.story = Story(i: 0)
         self.earth = Earth()
     }
     
-    private func buildEarth(view: UIView){
-        self.view = view
+    private func buildEarth(){
         let border = self.earth.getBorder()
         let globe = self.earth.getGlobe()
         let water = self.earth.getWater()
@@ -41,7 +50,7 @@ public class Scenes{
         continentSmoked2.center = CGPoint(x: centerWidth - 40, y: centerHeight + 30)
         
         self.label.frame = CGRect(x: 30, y: 30, width: 400, height: 150)
-
+        
         globe.layer.masksToBounds = true
         self.view.addSubview(border)
         self.view.addSubview(globe)
@@ -57,27 +66,31 @@ public class Scenes{
         earth.moveToLeft(image: cloud1)
         earth.moveToRight(image: cloud2)
     }
+    public func getView() -> UIView{
+        return self.view
+    }
     
-    public func startScene(i: Int, view: UIView){
-        buildEarth(view: view)
+    public func startScene(i: Int){
+        buildEarth()
         sceneSequency(i:i)
     }
     
     public func sceneSequency(i: Int){
-        let delay = story.chooseDelay(i: i)
-        let text = story.chooseText(i: i)
-        let textColor = story.chooseTextColor(i:i)
-        let backgroundColor = story.chooseBack(i: i)
-        self.whichbackgroundColor(i:backgroundColor)
-        self.fadeOutInLabel(text:text, textColor: textColor, delay: delay)
-        let id = i + 1
-        event(i: i)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1 + delay) {
-            if i <= 18{
+        identifier = i
+        if i <= 19{
+            let delay = story.chooseDelay(i: i)
+            let text = story.chooseText(i: i)
+            let textColor = story.chooseTextColor(i:i)
+            let backgroundColor = story.chooseBack(i: i)
+            self.whichbackgroundColor(i:backgroundColor)
+            self.fadeOutInLabel(text:text, textColor: textColor, delay: delay)
+            let id = i + 1
+            event(i: i)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4 + delay) {
                 self.sceneSequency(i: id)
-            }else{
-                self.savingEarth()
             }
+        }else{
+            self.savingEarth()
         }
     }
     
