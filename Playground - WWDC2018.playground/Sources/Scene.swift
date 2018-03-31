@@ -8,16 +8,15 @@ public class Scenes{
     private var earth: Earth
     var changeBackground = 3
     
-    public init(view: UIView){
-        self.view = view
+    public init(){
+        self.view = UIView()
         self.label = UILabel()
         self.story = Story(i: 0)
         self.earth = Earth()
-        buildEarth()
-        buildLabel()
     }
     
-    private func buildEarth(){
+    private func buildEarth(view: UIView){
+        self.view = view
         let border = self.earth.getBorder()
         let globe = self.earth.getGlobe()
         let water = self.earth.getWater()
@@ -41,6 +40,8 @@ public class Scenes{
         continentSmoked1.center = CGPoint(x: centerWidth, y: centerHeight - 35)
         continentSmoked2.center = CGPoint(x: centerWidth - 40, y: centerHeight + 30)
         
+        self.label.frame = CGRect(x: 30, y: 30, width: 400, height: 150)
+
         globe.layer.masksToBounds = true
         self.view.addSubview(border)
         self.view.addSubview(globe)
@@ -57,13 +58,10 @@ public class Scenes{
         earth.moveToRight(image: cloud2)
     }
     
-    func buildLabel(){
-        self.label.frame = CGRect(x: 30, y: 30, width: 400, height: 150)
+    public func startScene(i: Int, view: UIView){
+        buildEarth(view: view)
+        sceneSequency(i:i)
     }
-    
-    
-    
-    
     
     public func sceneSequency(i: Int){
         let delay = story.chooseDelay(i: i)
