@@ -6,8 +6,6 @@ let viewteste = UIView(frame: CGRect(x: 0, y: 0, width: 700, height: 400))
 var controller: Controller?
 controller = Controller(view:viewteste)
 
-
-
 //class MyViewController : UIViewController {
 //    override func loadView() {
 //        mylabel.frame = CGRect(x: 30, y: 30, width: 400, height: 150)

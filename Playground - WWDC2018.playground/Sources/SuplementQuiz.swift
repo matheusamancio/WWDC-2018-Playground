@@ -2,15 +2,7 @@ import Foundation
 import UIKit
 
 
-public class Questions{
-    
-    private var question: String
-    private var answer1: String
-    private var answer2: String
-    private var answer3: String
-    private var numCorrect: Int
-    private var wrongMessage: String
-    private var correctMessage: String
+public class SuplementQuiz{
     
     private var arrayQuestion: [String]
     private var arrayAnswer1: [String]
@@ -22,16 +14,7 @@ public class Questions{
 
 
     
-    public init(i: Int){
-        self.question = String()
-        self.answer1 = String()
-        self.answer2 = String()
-        self.answer3 = String()
-        self.numCorrect = Int()
-        self.wrongMessage = String()
-        self.correctMessage = String()
-        
-
+    public init(){
         
         self.arrayQuestion = []
         self.arrayAnswer1 = []
@@ -42,15 +25,15 @@ public class Questions{
         self.arrayCorrectMessage = []
 
 
-        self.autoAppend(i: i)
+        self.autoAppend()
     }
     
-    private func autoAppend(i: Int){
+    private func autoAppend(){
         // Questions
         let q1 = "Who will receive a WWDC schollarship this year"
         let q2 = "Who will give his life to Jesus?"
         let q3 = "Who will enjoy the family in this weekend?"
-        let arrayQuestion = [q1,q2,q3]
+        self.arrayQuestion = [q1,q2,q3]
         
         //Answer one
         let a11 = "me"
@@ -74,27 +57,20 @@ public class Questions{
         let n1 = 1
         let n2 = 2
         let n3 = 3
-        let arrayNumCorrect = [n1,n2,n3]
+        self.arrayNumCorrect = [n1,n2,n3]
         
         //wrong message
         let w1 = "nooooo"
         let w2 = "you bastard"
         let w3 = "are you kidding me?"
-        let arrayWrongMessage = [w1,w2,w3]
+        self.arrayWrongMessage = [w1,w2,w3]
         
         //correct message
         let c1 = "iuuupi"
         let c2 = "great dude"
         let c3 = "My man"
-        let arrayCorrectMessage = [c1,c2,c3]
+        self.arrayCorrectMessage = [c1,c2,c3]
 
-        self.question = arrayQuestion[i]
-        self.answer1 = arrayAnswer1[i]
-        self.answer2 = arrayAnswer2[i]
-        self.answer3 = arrayAnswer3[i]
-        self.numCorrect = arrayNumCorrect[i]
-        self.wrongMessage = arrayWrongMessage[i]
-        self.correctMessage = arrayCorrectMessage[i]
     }
     
     public func chooseQuestion(i:Int) -> String{
