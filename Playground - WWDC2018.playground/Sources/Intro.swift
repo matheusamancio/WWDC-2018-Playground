@@ -34,12 +34,12 @@ public class Intro{
         self.label.frame = CGRect(x: 30, y: 30, width: 400, height: 150)
         self.label.text = "teste"
         self.label.tintColor = UIColor.black
-        self.view.backgroundColor = UIColor.yellow
+        self.view.backgroundColor = UIColor.white
         self.view.addSubview(self.label)
         
         //button
         self.startButton.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
-        self.startButton.setTitle("Click", for: .normal)
+        self.startButton.setTitle("Watch now", for: .normal)
         self.startButton.backgroundColor = UIColor.black
         self.startButton.addTarget(self, action: #selector(StartAnimation), for: .touchUpInside)
         self.view.addSubview(startButton)

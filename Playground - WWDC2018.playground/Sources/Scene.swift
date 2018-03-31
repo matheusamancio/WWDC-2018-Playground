@@ -35,6 +35,8 @@ public class Scenes{
         let continent2 = self.earth.getContinent2()
         let continentSmoked1 = self.earth.getContinentSmoked1()
         let continentSmoked2 = self.earth.getContinentSmoked2()
+        let moon = self.earth.getMoon()
+
         
         let centerWidth = view.frame.width/2
         let centerHeight = view.frame.height/2
@@ -48,6 +50,8 @@ public class Scenes{
         continent2.center = CGPoint(x: centerWidth - 40, y: centerHeight + 30)
         continentSmoked1.center = CGPoint(x: centerWidth, y: centerHeight - 35)
         continentSmoked2.center = CGPoint(x: centerWidth - 40, y: centerHeight + 30)
+        moon.center = CGPoint(x: centerWidth - 100, y: centerHeight - 100)
+
         
         self.label.frame = CGRect(x: 30, y: 30, width: 400, height: 150)
         
@@ -61,10 +65,13 @@ public class Scenes{
         self.view.addSubview(continentSmoked2)
         self.view.addSubview(cloud1)
         self.view.addSubview(cloud2)
+        self.view.addSubview(moon)
         self.view.addSubview(self.label)
+
         
         earth.moveToLeft(image: cloud1)
         earth.moveToRight(image: cloud2)
+        earth.moveMoon(center: self.view.center)
     }
     public func getView() -> UIView{
         return self.view
@@ -86,7 +93,7 @@ public class Scenes{
             self.fadeOutInLabel(text:text, textColor: textColor, delay: delay)
             let id = i + 1
             event(i: i)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0 + delay) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3 + delay) {
                 self.sceneSequency(i: id)
             }
         }
@@ -153,4 +160,10 @@ public class Scenes{
         }
     }
     
+
+    
+    
 }
+
+    
+

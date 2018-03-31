@@ -39,7 +39,7 @@ public class Controller{
     
     func startScene(){
         viewScene = scenes.getView()
-        self.scenes.startScene(i: 16)
+        self.scenes.startScene(i: 0)
         self.view.addSubview(viewScene)
     }
     

@@ -13,8 +13,9 @@ public class Earth{
     private var continent2: UIImageView
     private var continentSmoked1: UIImageView
     private var continentSmoked2: UIImageView
-
-
+    private var moon: UIView
+    
+    
     
     public init(){
         self.border = UIView()
@@ -26,6 +27,7 @@ public class Earth{
         self.continent2 = UIImageView()
         self.continentSmoked1 = UIImageView()
         self.continentSmoked2 = UIImageView()
+        self.moon = UIView()
         
         self.setBorder()
         self.setGlobe()
@@ -36,8 +38,16 @@ public class Earth{
         self.setContinent(continent: self.continent2, flag: 2)
         self.setContinent(continent: self.continentSmoked1, flag: 3)
         self.setContinent(continent: self.continentSmoked2, flag: 4)
+        self.setMoon()
+        
     }
     
+    func setMoon(){
+        self.moon.frame.size.height = 20
+        self.moon.frame.size.width = 20
+        self.moon.backgroundColor = UIColor.gray
+        self.moon.layer.cornerRadius = self.moon.frame.size.height/2
+    }
     
     func setBorder(){
         self.border.frame.size.height = 200
@@ -45,7 +55,7 @@ public class Earth{
         self.border.backgroundColor = UIColor.globeColor()
         self.border.layer.cornerRadius = self.border.frame.size.height/2
     }
-
+    
     func setGlobe(){
         self.globe.frame.size.height = 190
         self.globe.frame.size.width = 190
@@ -57,7 +67,7 @@ public class Earth{
         self.water.frame.size.height = 200
         self.water.frame.size.width = 200
         self.water.backgroundColor = UIColor.waterColor()
-//        self.water.layer.cornerRadius = self.water.frame.size.height/2
+        //        self.water.layer.cornerRadius = self.water.frame.size.height/2
     }
     
     func setCloud(cloud: UIImageView){
@@ -87,12 +97,15 @@ public class Earth{
             continent.image = #imageLiteral(resourceName: "iContinetPolution2.png")
             continent.alpha = 0
         default:
-           print(#function,"Default")
-
+            print(#function,"Default")
+            
         }
-
+        
     }
     
+    public func getMoon() -> UIView{
+        return self.moon
+    }
     public func getBorder() -> UIView{
         return self.border
     }
@@ -179,5 +192,14 @@ public class Earth{
         removeCloudPolution()
     }
     
-    
+    public func moveMoon(center: CGPoint){
+        let circlePath = UIBezierPath(arcCenter: center, radius: 180, startAngle: 0, endAngle: .pi*2, clockwise: true)
+        
+        let animation = CAKeyframeAnimation(keyPath: "position")
+        animation.duration = 20
+        animation.repeatCount = MAXFLOAT
+        animation.path = circlePath.cgPath
+        
+        self.moon.layer.add(animation, forKey: nil)
+    }
 }
