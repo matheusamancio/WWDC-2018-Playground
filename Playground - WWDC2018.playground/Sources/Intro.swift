@@ -38,9 +38,9 @@ public class Intro{
         self.view.addSubview(self.label)
         
         //button
-        self.startButton.frame = CGRect(x: 100, y: 100, width: 50, height: 50)
+        self.startButton.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
         self.startButton.setTitle("Click", for: .normal)
-        self.startButton.bounds = view.bounds
+        self.startButton.backgroundColor = UIColor.black
         self.startButton.addTarget(self, action: #selector(StartAnimation), for: .touchUpInside)
         self.view.addSubview(startButton)
     }

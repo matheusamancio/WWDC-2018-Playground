@@ -89,12 +89,10 @@ public class Scenes{
             DispatchQueue.main.asyncAfter(deadline: .now() + 4 + delay) {
                 self.sceneSequency(i: id)
             }
-        }else{
-            self.savingEarth()
         }
     }
     
-    func savingEarth(){
+    public func savingEarth(){
         self.label.alpha = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             self.earth.saveEarth()
