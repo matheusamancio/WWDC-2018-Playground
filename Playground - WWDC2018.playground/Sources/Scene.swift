@@ -7,10 +7,14 @@ public class Scenes{
     private var story: Story
     private var earth: Earth
     public var goToQuestions: (()->())?
+    public var goToTheEnd: (()->())?
     var identifier: Int{
         didSet {
             if identifier == 22{
                 goToQuestions?()
+            }
+            if identifier == 30{
+                goToTheEnd?()
             }
         }
     }
@@ -112,6 +116,9 @@ public class Scenes{
                 let textColor = self.story.chooseTextColor(i:0)
                 self.fadeOutInLabel(text:text, textColor: textColor, delay: 3)
             }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+            self.identifier = 30
         }
     }
     

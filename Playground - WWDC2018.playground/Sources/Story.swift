@@ -47,7 +47,7 @@ public class Story{
         let t4 = "Has been quite a while since i'm feeling sick"
         let t5 = "I used to have blue oceans and clean water for everyone"
         let t6 = "and now it's running out"
-        let t7 = "every minute X litres are wasted around the world"
+        let t7 = "Every minute a newborn dies from infection caused by lack of safe water and an unclean environment."
         let t8 = "and 844 million people don’t have clean water"
         let t9 = " ... furthermore"
         let t10 = "my lungs are beeing affected as well"

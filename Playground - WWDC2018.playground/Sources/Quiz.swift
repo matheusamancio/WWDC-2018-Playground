@@ -11,11 +11,11 @@ public class Quiz{
     private var suplementQuiz: SuplementQuiz
     private var i: Int
     
-    public var goToTheEnd: (()->())?
+    public var goFinalScene: (()->())?
     private var clicked: Int{
         didSet {
             if clicked == 1{
-                goToTheEnd?()
+                goFinalScene?()
             }
         }
     }
