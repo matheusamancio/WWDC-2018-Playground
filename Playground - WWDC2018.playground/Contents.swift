@@ -11,6 +11,12 @@ scene = Scenes(view: viewteste, label: mylabel)
 scene?.sceneSequency(i: 0)
 
 
+
+
+
+
+
+
 //class MyViewController : UIViewController {
 //    override func loadView() {
 //        mylabel.frame = CGRect(x: 30, y: 30, width: 400, height: 150)

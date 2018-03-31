@@ -78,6 +78,7 @@ public class Scenes{
             }
         }
     }
+    
     func savingEarth(){
         self.label.alpha = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
@@ -89,7 +90,6 @@ public class Scenes{
                 self.fadeOutInLabel(text:text, textColor: textColor, delay: 3)
             }
         }
-        
     }
     
     func event(i: Int){
