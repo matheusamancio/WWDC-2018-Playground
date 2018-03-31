@@ -20,10 +20,15 @@ public class Scenes{
     }
     
     var changeBackground = 3
+    var screenWidth: CGFloat 
+    var screenHeight: CGFloat
+
     
     public init(){
+        self.screenWidth = UIScreen.main.bounds.width
+        self.screenHeight = UIScreen.main.bounds.height
         self.identifier = Int()
-        self.view = UIView(frame: CGRect(x: 0, y: 0, width: 700, height: 400))
+        self.view = UIView(frame: CGRect(x: 0, y: 0, width: self.screenWidth, height: self.screenHeight))
         self.label = UILabel()
         self.story = Story(i: 0)
         self.earth = Earth()
@@ -42,18 +47,18 @@ public class Scenes{
         let moon = self.earth.getMoon()
 
         
-        let centerWidth = view.frame.width/2
-        let centerHeight = view.frame.height/2
+        let centerWidth = view.center.x
+        let centerHeight = view.center.y
         
-        border.center = CGPoint(x: centerWidth, y: centerHeight)
-        globe.center = CGPoint(x: centerWidth, y: centerHeight)
+        border.center = CGPoint(x: centerWidth, y: centerHeight/2)
+        globe.center = CGPoint(x: centerWidth, y: centerHeight/2)
         water.center = CGPoint(x: globe.frame.width/2, y: globe.frame.height/2)
-        cloud1.center = CGPoint(x: centerWidth + 60, y: centerHeight + 15)
-        cloud2.center = CGPoint(x: centerWidth - 60, y: centerHeight - 50)
-        continent1.center = CGPoint(x: centerWidth, y: centerHeight - 35)
-        continent2.center = CGPoint(x: centerWidth - 40, y: centerHeight + 30)
-        continentSmoked1.center = CGPoint(x: centerWidth, y: centerHeight - 35)
-        continentSmoked2.center = CGPoint(x: centerWidth - 40, y: centerHeight + 30)
+        cloud1.center = CGPoint(x: centerWidth + 60, y: centerHeight/2 + 15)
+        cloud2.center = CGPoint(x: centerWidth - 60, y: centerHeight/2 - 50)
+        continent1.center = CGPoint(x: centerWidth, y: centerHeight/2 - 35)
+        continent2.center = CGPoint(x: centerWidth - 40, y: centerHeight/2 + 30)
+        continentSmoked1.center = CGPoint(x: centerWidth, y: centerHeight/2 - 35)
+        continentSmoked2.center = CGPoint(x: centerWidth - 40, y: centerHeight/2 + 30)
         moon.center = CGPoint(x: centerWidth - 100, y: centerHeight - 100)
 
         

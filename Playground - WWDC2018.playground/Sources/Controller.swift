@@ -13,9 +13,13 @@ public class Controller{
     private var viewQuiz: UIView
     private var viewTheEnd: UIView
 
-
     
     public init(view: UIView){
+
+        self.view = UIView()
+        self.view.frame.size.height = view.frame.size.height
+        self.view.frame.size.width = view.frame.size.width
+
         self.view = view
         self.intro = Intro()
         self.quiz = Quiz()

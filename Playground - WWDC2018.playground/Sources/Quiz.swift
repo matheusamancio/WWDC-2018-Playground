@@ -21,10 +21,16 @@ public class Quiz{
     }
     
     public init(){
+        var screenWidth: CGFloat {
+            return UIScreen.main.bounds.width
+        }
+        var screenHeight: CGFloat {
+            return UIScreen.main.bounds.height
+        }
         self.suplementQuiz = SuplementQuiz()
         self.i = Int()
         self.clicked = 0
-        self.view = UIView(frame: CGRect(x: 0, y: 0, width: 700, height: 400))
+        self.view = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
         self.labelQuestion = UILabel()
         self.labelSubTitle = UILabel()
         self.answerOne = UIButton()

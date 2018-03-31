@@ -100,7 +100,6 @@ public class Earth{
             print(#function,"Default")
             
         }
-        
     }
     
     public func getMoon() -> UIView{

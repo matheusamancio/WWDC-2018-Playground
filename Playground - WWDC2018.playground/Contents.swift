@@ -2,13 +2,17 @@
 import AVFoundation
 import UIKit
 import PlaygroundSupport
-
-let viewteste = UIView(frame: CGRect(x: 0, y: 0, width: 700, height: 400))
+public var screenWidth: CGFloat {
+    return UIScreen.main.bounds.width
+}
+public var screenHeight: CGFloat {
+    return UIScreen.main.bounds.height
+}
+let viewteste = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
+viewteste.backgroundColor = .red
 var controller: Controller?
 controller = Controller(view:viewteste)
 viewteste.center
-
-
 
 var backgroundMusicPlayer = AVAudioPlayer()
 
@@ -42,8 +46,10 @@ playSound()
 //    }
 //}
 // Present the view controller in the Live View window
+
+
 PlaygroundPage.current.liveView = viewteste
-PlaygroundPage.current.needsIndefiniteExecution = true
+
 //#-end-hidden-code
 /*:
  ## Hi I'm Earth
