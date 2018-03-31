@@ -97,9 +97,8 @@ public class Scenes{
             self.fadeOutInLabel(text:text, textColor: textColor, delay: delay)
             let id = i + 1
             event(i: i)
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 4 + delay) {
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4 + delay) {
+//            DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.sceneSequency(i: id)
             }
         }
