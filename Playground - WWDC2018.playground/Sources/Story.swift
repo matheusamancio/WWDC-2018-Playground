@@ -53,7 +53,7 @@ public class Story{
         let t10 = "my lungs are beeing affected as well"
         let t11 = "The doctor said something called carbon pollution"
         let t12 = "have you heard of it?"
-        let t13 = "I'm losing 24 billion tonnes of topsoil each year because of land pollution"
+        let t13 = "I'm losing 24 billion tons of topsoil each year because of land pollution"
         let t14 = "This carbon is killing me"
         let t15 = "It's killing You"
         let t16 = "and I'm getting fever"

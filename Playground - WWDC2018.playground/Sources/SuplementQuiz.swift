@@ -36,21 +36,21 @@ public class SuplementQuiz{
         self.arrayQuestion = [q1,q2,q3]
         
         //Answer one
-        let a11 = "me"
-        let a12 = "me again"
-        let a13 = "me too"
+        let a11 = "  me"
+        let a12 = "  me again"
+        let a13 = "  me too"
         self.arrayAnswer1 = [a11,a12,a13]
         
         //Answer two
-        let a21 = "me too"
-        let a22 = "me"
-        let a23 = "me again"
+        let a21 = "  me too"
+        let a22 = "  me"
+        let a23 = "  me again"
         self.arrayAnswer2 = [a21,a22,a23]
         
-        //Answer two
-        let a31 = "me again"
-        let a32 = "me too"
-        let a33 = "me"
+        //Answer three
+        let a31 = "  me again"
+        let a32 = "  me too"
+        let a33 = "  me"
         self.arrayAnswer3 = [a31,a32,a33]
         
         //num Correct

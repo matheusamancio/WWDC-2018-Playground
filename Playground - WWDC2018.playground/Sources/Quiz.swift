@@ -59,7 +59,7 @@ public class Quiz{
         self.view.addSubview(self.labelQuestion)
         
         //answer one
-        self.answerOne.frame = CGRect(x: 50, y: 150, width: 80, height: 50)
+        self.answerOne.frame = CGRect(x: 30, y: 120, width: 300, height: 50)
         let text1 = self.suplementQuiz.chooseAnswer1(i:i)
         self.answerOne.setTitle(text1, for: .normal)
         self.answerOne.backgroundColor = UIColor.white
@@ -71,7 +71,7 @@ public class Quiz{
         self.view.addSubview(answerOne)
         
         //button one
-        self.answerTwo.frame = CGRect(x: 150, y: 150, width: 80, height: 50)
+        self.answerTwo.frame = CGRect(x: 30, y: 180, width: 300, height: 50)
         let text2 = self.suplementQuiz.chooseAnswer2(i:i)
         self.answerTwo.setTitle(text2, for: .normal)
         self.answerTwo.setTitleColor(UIColor.quizButtonTextColor(), for: .normal)
@@ -83,7 +83,7 @@ public class Quiz{
         self.view.addSubview(answerTwo)
         
         //button one
-        self.answerThree.frame = CGRect(x: 250, y: 150, width: 80, height: 50)
+        self.answerThree.frame = CGRect(x: 30, y: 240, width: 300, height: 50)
         let text3 = self.suplementQuiz.chooseAnswer3(i:i)
         self.answerThree.setTitle(text3, for: .normal)
         self.answerThree.backgroundColor = UIColor.white

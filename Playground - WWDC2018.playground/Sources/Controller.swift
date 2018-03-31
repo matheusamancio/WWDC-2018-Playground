@@ -56,8 +56,8 @@ public class Controller{
     }
     
     func changeToScenes(){
-        viewIntro.removeFromSuperview()
-        startScene()
+        self.viewIntro.removeFromSuperview()
+        self.startScene()
     }
     
     func changeToQuiz() {
