@@ -8,12 +8,13 @@ public class Scenes{
     private var earth: Earth
     var changeBackground = 3
     
-    public init(view: UIView, label: UILabel){
+    public init(view: UIView){
         self.view = view
-        self.label = label
+        self.label = UILabel()
         self.story = Story(i: 0)
         self.earth = Earth()
         buildEarth()
+        buildLabel()
     }
     
     private func buildEarth(){
@@ -56,6 +57,9 @@ public class Scenes{
         earth.moveToRight(image: cloud2)
     }
     
+    func buildLabel(){
+        self.label.frame = CGRect(x: 30, y: 30, width: 400, height: 150)
+    }
     
     
     
