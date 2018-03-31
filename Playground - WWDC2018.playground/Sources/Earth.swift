@@ -153,12 +153,12 @@ public class Earth{
     
     public func removeWater() {
         UIView.animate(withDuration: 15) {
-            self.water.center.y += 500
+            self.water.center.y += 300
         }
     }
     public func appearWater() {
-        UIView.animate(withDuration: 10) {
-            self.water.center.y -= 500
+        UIView.animate(withDuration: 6) {
+            self.water.center.y -= 300
         }
     }
     public func SmokeContinents() {

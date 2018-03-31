@@ -44,6 +44,10 @@ public class Controller{
             print(#function,"vai pra cena")
             self.changeToScenesEnd()
         }
+        self.theEnd.goToScenes = {
+            print(#function,"restart scene")
+            self.restartScenes()
+        }
         
     }
     //start pages
@@ -90,6 +94,11 @@ public class Controller{
     func changeToTheEnd(){
         viewScene.removeFromSuperview()
         self.startTheEnd()
+    }
+    
+    func restartScenes(){
+        self.viewTheEnd.removeFromSuperview()
+        self.startScene()
     }
 
 }

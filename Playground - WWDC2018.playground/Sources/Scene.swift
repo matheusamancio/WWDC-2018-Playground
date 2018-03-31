@@ -110,15 +110,15 @@ public class Scenes{
         self.label.alpha = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             self.earth.saveEarth()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 9){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 6){
                 self.whichbackgroundColor(i:0)
                 let text = self.story.chooseText(i: 0)
                 let textColor = self.story.chooseTextColor(i:0)
                 self.fadeOutInLabel(text:text, textColor: textColor, delay: 3)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 8){
+                    self.identifier = 30
+                }
             }
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-            self.identifier = 30
         }
     }
     
