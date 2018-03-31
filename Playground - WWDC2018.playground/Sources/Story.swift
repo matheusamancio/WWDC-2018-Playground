@@ -144,8 +144,6 @@ public class Story{
     public func getRangeImp() -> (Int, Int){
         return self.rangeTextImpact
     }
-    public func nextSentence(){
-        self.ind = self.ind + 1
-    }
+
 }
 
