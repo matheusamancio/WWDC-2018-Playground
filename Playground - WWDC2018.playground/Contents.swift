@@ -38,7 +38,8 @@ PlaygroundPage.current.liveView = myView
  ## Hi I'm Earth
  "Hi, I'm Earth" is an animation, that you will have a day-by-day conversation with earth.
  ## Prepare the popcorn, prepare your heart, and watch it.
-
- 
+ For a better experience:
+ - turn your ipad into landscape and watch it with full screen
+ - Use headphones
  */
 

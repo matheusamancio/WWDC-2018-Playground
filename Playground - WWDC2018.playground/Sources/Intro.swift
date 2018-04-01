@@ -38,8 +38,6 @@ public class Intro{
     private func buildIntro(){
         // center
         self.view.backgroundColor = UIColor.white
-        let centerWidth = view.frame.width/2
-        let centerHeight = view.frame.height/2
         
         //label subtitle
         self.labelSubTitle.frame = CGRect(x: 30, y: 10, width: 100, height: 50)
