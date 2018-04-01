@@ -73,8 +73,8 @@ public class Story{
         let r1 = ""
         let r2 = "(WHO, 2015)"
         let r3 = "(WHO/UNICEF (JMP) Report 2017)"
-        let r4 = "pesquisar"
-        let r5 = "pesquisar tbm"
+        let r4 = ""
+        let r5 = ""
         self.arrayReferences = [r1,r1,r1,r1,r1,r1,r1,r2,r3,r1,r1,r1,r1,r4,r1,r1,r1,r5,r1,r1,r1,r1,r1,r1]
         
     }

@@ -67,6 +67,16 @@ public class Controller{
     }
     //start pages
     func startScene(){
+        viewScene = scenes.getView()
+        viewIntro = intro.getView()
+        viewQuiz = quiz.getView()
+        viewTheEnd = theEnd.getView()
+        
+        self.view.addSubview(viewTheEnd)
+        self.view.addSubview(viewQuiz)
+        self.view.addSubview(viewScene)
+        self.view.addSubview(viewIntro)
+        
         self.scenes.startScene(i: 0)
         self.view.bringSubview(toFront:viewScene)
     }

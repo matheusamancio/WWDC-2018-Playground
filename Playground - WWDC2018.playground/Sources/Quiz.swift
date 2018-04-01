@@ -56,8 +56,8 @@ public class Quiz{
         
         
         //label Subtitle
-        self.labelSubTitle.frame = CGRect(x: 30, y: 10, width: 200, height: 50)
-        self.labelSubTitle.text = "Let's save the earth"
+        self.labelSubTitle.frame = CGRect(x: 30, y: 10, width: 300, height: 50)
+        self.labelSubTitle.text = "Do you want to help the earth?"
         self.labelSubTitle.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.thin)
         self.labelSubTitle.textColor = UIColor.white
         self.view.addSubview(self.labelSubTitle)
@@ -72,7 +72,7 @@ public class Quiz{
         self.view.addSubview(self.labelQuestion)
         
         //answer one
-        self.answerOne.frame = CGRect(x: 30, y: 120, width: 300, height: 50)
+        self.answerOne.frame = CGRect(x: 30, y: 120, width: 500, height: 50)
         let text1 = self.suplementQuiz.chooseAnswer1(i:i)
         self.answerOne.setTitle(text1, for: .normal)
         self.answerOne.backgroundColor = UIColor.white
@@ -84,7 +84,7 @@ public class Quiz{
         self.view.addSubview(answerOne)
         
         //button one
-        self.answerTwo.frame = CGRect(x: 30, y: 180, width: 300, height: 50)
+        self.answerTwo.frame = CGRect(x: 30, y: 180, width: 500, height: 50)
         let text2 = self.suplementQuiz.chooseAnswer2(i:i)
         self.answerTwo.setTitle(text2, for: .normal)
         self.answerTwo.setTitleColor(UIColor.quizButtonTextColor(), for: .normal)
@@ -96,7 +96,7 @@ public class Quiz{
         self.view.addSubview(answerTwo)
         
         //button one
-        self.answerThree.frame = CGRect(x: 30, y: 240, width: 300, height: 50)
+        self.answerThree.frame = CGRect(x: 30, y: 240, width: 500, height: 50)
         let text3 = self.suplementQuiz.chooseAnswer3(i:i)
         self.answerThree.setTitle(text3, for: .normal)
         self.answerThree.backgroundColor = UIColor.white
@@ -138,7 +138,6 @@ public class Quiz{
     
     @objc func buttonOnePressed() {
         print(#function,"one pressed")
-        if suplementQuiz.chooseNumCorrect(i:i) == 1 {
             if i < 2{
                 nextQuestion()
             }else{
@@ -149,29 +148,24 @@ public class Quiz{
                 }
                 
             }
-        }
     }
     
     @objc func buttonTwoPressed() {
         print(#function,"two pressed")
-        if suplementQuiz.chooseNumCorrect(i:i) == 2 {
             if i < 2{
                 nextQuestion()
             }else{
                 self.clicked = 1
             }
-        }
     }
     
     @objc func buttonThreePressed() {
         print(#function,"three pressed")
-        if suplementQuiz.chooseNumCorrect(i:i) == 3 {
             if i < 2{
                 nextQuestion()
             }else{
                 self.clicked = 1
             }
-        }
     }
     
     public func getView() -> UIView{

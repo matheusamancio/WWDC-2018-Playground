@@ -6,7 +6,7 @@ public class TheEnd{
     private var labelSubTitle: UILabel
     private var labelTitle: UILabel
     private var labelExplanation: UILabel
-    private var watchAgainButton: UIButton
+    private var labelCredits: UILabel
     public var goToScenes: (()->())?
     private var clicked: Int{
         didSet {
@@ -28,7 +28,7 @@ public class TheEnd{
         self.labelSubTitle = UILabel()
         self.labelTitle = UILabel()
         self.labelExplanation = UILabel()
-        self.watchAgainButton = UIButton()
+        self.labelCredits = UILabel()
         self.view.backgroundColor = .white
         
     }
@@ -66,19 +66,18 @@ public class TheEnd{
         self.view.addSubview(self.labelExplanation)
         
         //button
-        self.watchAgainButton.frame = CGRect(x: centerWidth - 75, y: centerHeight/2 + 60, width: 150, height: 40)
-        self.watchAgainButton.backgroundColor = UIColor.black
-        self.watchAgainButton.setTitle("Watch again", for: .normal)
-        self.watchAgainButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.medium)
-        self.watchAgainButton.contentHorizontalAlignment = .center
-        self.watchAgainButton.layer.cornerRadius = 8
-        self.watchAgainButton.addTarget(self, action: #selector(StartAnimation), for: .touchUpInside)
-        self.view.addSubview(watchAgainButton)
+        self.labelCredits.frame = CGRect(x: centerWidth - 300, y: centerHeight/2 + 60, width: 600, height: 400)
+        self.labelCredits.text = ""
+        self.labelCredits.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.thin)
+        self.labelCredits.tintColor = UIColor.black
+        self.labelCredits.textAlignment = .center
+        self.labelCredits.numberOfLines = 4
+        self.view.addSubview(self.labelCredits)
         
         self.labelSubTitle.alpha = 0
         self.labelTitle.alpha = 0
         self.labelExplanation.alpha = 0
-        self.watchAgainButton.alpha = 0
+        self.labelCredits.alpha = 0
         
         UIView.animate(withDuration: 3) {
             
@@ -103,7 +102,8 @@ public class TheEnd{
                     self.labelSubTitle.text = "Hi, I'm Earth"
                     self.labelExplanation.text = "Matheus Amancio"
                     self.labelTitle.text = "Thank you for your time"
-                    self.watchAgainButton.alpha = 1
+                    self.labelCredits.text = "Credits Background music:\n Touch - Mattia Cupelli \n https://soundcloud.com/mattiacupelli/touch-download-and-royalty-free-piano-music"
+                    self.labelCredits.alpha = 1
                     self.labelExplanation.alpha = 1
                     self.labelTitle.alpha = 1
                 }, completion: nil)

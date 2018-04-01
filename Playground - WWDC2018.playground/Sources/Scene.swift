@@ -66,7 +66,7 @@ public class Scenes{
 
         
         self.label.frame = CGRect(x: 50, y: 50, width: 600, height: 150)
-        self.labelR.frame = CGRect(x: centerWidth + 100, y: centerHeight/2 + 100, width: 250, height: 150)
+        self.labelR.frame = CGRect(x: centerWidth + 100, y: centerHeight/2 + 70, width: 300, height: 150)
 
         self.label.numberOfLines = 2
         
