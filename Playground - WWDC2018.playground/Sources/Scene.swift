@@ -4,6 +4,7 @@ public class Scenes{
     
     private var view: UIView
     private var label: UILabel
+    private var labelR: UILabel
     private var story: Story
     private var earth: Earth
     public var goToQuestions: (()->())?
@@ -30,6 +31,7 @@ public class Scenes{
         self.identifier = Int()
         self.view = UIView(frame: CGRect(x: 0, y: 0, width: self.screenWidth, height: self.screenHeight))
         self.label = UILabel()
+        self.labelR = UILabel()
         self.story = Story(i: 0)
         self.earth = Earth()
         self.view.backgroundColor = UIColor.white
@@ -64,6 +66,8 @@ public class Scenes{
 
         
         self.label.frame = CGRect(x: 50, y: 50, width: 600, height: 150)
+        self.labelR.frame = CGRect(x: centerWidth + 100, y: centerHeight/2 + 100, width: 250, height: 150)
+
         self.label.numberOfLines = 2
         
         border.alpha = 0
@@ -88,6 +92,8 @@ public class Scenes{
         self.view.addSubview(cloud2)
         self.view.addSubview(moon)
         self.view.addSubview(self.label)
+        self.view.addSubview(self.labelR)
+
 
         earth.moveToLeft(image: cloud1)
         earth.moveToRight(image: cloud2)
@@ -119,14 +125,15 @@ public class Scenes{
         if i <= 23{
             let delay = story.chooseDelay(i: i)
             let text = story.chooseText(i: i)
+            let ref = story.chooseReferences(i: i)
             let textColor = story.chooseTextColor(i:i)
             let backgroundColor = story.chooseBack(i: i)
             self.whichbackgroundColor(i:backgroundColor)
-            self.fadeOutInLabel(text:text, textColor: textColor, delay: delay)
+            self.fadeOutInLabel(text:text, textColor: textColor, delay: delay, ref: ref)
             let id = i + 1
             event(i: i)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0 + delay) {
-//            DispatchQueue.main.asyncAfter(deadline: .now()) {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 4 + delay) {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.sceneSequency(i: id)
             }
         }
@@ -134,13 +141,15 @@ public class Scenes{
     
     public func savingEarth(){
         self.label.alpha = 0
+        self.labelR.alpha = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             self.earth.saveEarth()
             DispatchQueue.main.asyncAfter(deadline: .now() + 6){
                 self.whichbackgroundColor(i:0)
                 let text = self.story.chooseText(i: 0)
+                let ref = self.story.chooseReferences(i: 0)
                 let textColor = self.story.chooseTextColor(i:0)
-                self.fadeOutInLabel(text:text, textColor: textColor, delay: 3)
+                self.fadeOutInLabel(text:text, textColor: textColor, delay: 3, ref: ref)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 8){
                     self.identifier = 30
                 }
@@ -184,14 +193,18 @@ public class Scenes{
     
     
     
-    func fadeOutInLabel(text: String, textColor: UIColor, delay: TimeInterval){
+    func fadeOutInLabel(text: String, textColor: UIColor, delay: TimeInterval, ref: String){
         UIView.animate(withDuration: 1, animations: {
             self.label.alpha = 0
+            self.labelR.alpha = 0
         }) { (true) in
             self.label.text = text
+            self.labelR.text = ref
             UIView.animate(withDuration: 1, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations: {
                 self.label.alpha = 1
+                self.labelR.alpha = 1
                 self.label.textColor = textColor
+                self.labelR.textColor = textColor
             }, completion: nil)
         }
     }

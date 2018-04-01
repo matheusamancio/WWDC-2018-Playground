@@ -42,31 +42,34 @@ public class TheEnd{
         let centerHeight = view.frame.height/2
         
         //label subtitle
-        self.labelSubTitle.frame = CGRect(x: centerWidth/2, y: 10, width: 100, height: 50)
-        self.labelSubTitle.text = "Hi, I’m earth"
+        self.labelSubTitle.frame = CGRect(x: centerWidth - 100, y: 10, width: 200, height: 70)
+        self.labelSubTitle.text = ""
         self.labelTitle.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.thin)
         self.labelSubTitle.tintColor = UIColor.black
+        self.labelSubTitle.textAlignment = .center
         self.view.addSubview(self.labelSubTitle)
         
         //label Title
-        self.labelTitle.frame = CGRect(x: centerWidth/2, y: 60, width: 400, height: 50)
-        self.labelTitle.text = ""
-        self.labelTitle.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
+        self.labelTitle.frame = CGRect(x: centerWidth - 300, y: centerHeight/2 - 80, width: 600, height: 100)
+        self.labelTitle.text = "Small acts can make big impacts"
+        self.labelTitle.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.bold)
         self.labelTitle.tintColor = UIColor.black
+        self.labelTitle.textAlignment = .center
         self.view.addSubview(self.labelTitle)
         
         //label Explanation
-        self.labelExplanation.frame = CGRect(x: centerWidth/2, y: 80, width: 300, height: 59)
-        self.labelExplanation.text = "Small acts can make big impacts"
-        self.labelExplanation.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.thin)
+        self.labelExplanation.frame = CGRect(x: centerWidth - 200, y: centerHeight/2 - 20, width: 400, height: 59)
+        self.labelExplanation.text = ""
+        self.labelExplanation.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.thin)
         self.labelExplanation.tintColor = UIColor.black
+        self.labelExplanation.textAlignment = .center
         self.view.addSubview(self.labelExplanation)
         
         //button
-        self.watchAgainButton.frame = CGRect(x: centerWidth/2, y: 140, width: 100, height: 40)
+        self.watchAgainButton.frame = CGRect(x: centerWidth - 75, y: centerHeight/2 + 60, width: 150, height: 40)
         self.watchAgainButton.backgroundColor = UIColor.black
         self.watchAgainButton.setTitle("Watch again", for: .normal)
-        self.watchAgainButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium)
+        self.watchAgainButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.medium)
         self.watchAgainButton.contentHorizontalAlignment = .center
         self.watchAgainButton.layer.cornerRadius = 8
         self.watchAgainButton.addTarget(self, action: #selector(StartAnimation), for: .touchUpInside)
@@ -97,6 +100,7 @@ public class TheEnd{
                 self.labelTitle.alpha = 0
             }) { (true) in
                 UIView.animate(withDuration: 1, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+                    self.labelSubTitle.text = "Hi, I'm Earth"
                     self.labelExplanation.text = "Matheus Amancio"
                     self.labelTitle.text = "Thank you for your time"
                     self.watchAgainButton.alpha = 1
