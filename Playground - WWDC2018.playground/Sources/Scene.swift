@@ -32,6 +32,7 @@ public class Scenes{
         self.label = UILabel()
         self.story = Story(i: 0)
         self.earth = Earth()
+        self.view.backgroundColor = UIColor.white
     }
     
     private func buildEarth(){
@@ -62,8 +63,19 @@ public class Scenes{
         moon.center = CGPoint(x: centerWidth - 100, y: centerHeight - 100)
 
         
-        self.label.frame = CGRect(x: 30, y: 30, width: 400, height: 150)
+        self.label.frame = CGRect(x: 50, y: 50, width: 600, height: 150)
+        self.label.numberOfLines = 2
         
+        border.alpha = 0
+        globe.alpha = 0
+        water.alpha = 0
+        continent1.alpha = 0
+        continent2.alpha = 0
+        cloud1.alpha = 0
+        cloud2.alpha = 0
+        moon.alpha = 0
+
+
         globe.layer.masksToBounds = true
         self.view.addSubview(border)
         self.view.addSubview(globe)
@@ -77,11 +89,22 @@ public class Scenes{
         self.view.addSubview(moon)
         self.view.addSubview(self.label)
 
-        
         earth.moveToLeft(image: cloud1)
         earth.moveToRight(image: cloud2)
         earth.moveMoon(center: globe.center)
+
+        UIView.animate(withDuration: 3) {
+            border.alpha = 1
+            globe.alpha = 1
+            water.alpha = 1
+            continent1.alpha = 1
+            continent2.alpha = 1
+            cloud1.alpha = 1
+            cloud2.alpha = 1
+            moon.alpha = 1
+        }
     }
+
     public func getView() -> UIView{
         return self.view
     }
@@ -102,7 +125,7 @@ public class Scenes{
             self.fadeOutInLabel(text:text, textColor: textColor, delay: delay)
             let id = i + 1
             event(i: i)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4 + delay) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1 + delay) {
 //            DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.sceneSequency(i: id)
             }
@@ -110,7 +133,6 @@ public class Scenes{
     }
     
     public func savingEarth(){
-        earth.moveMoon(center: view.center)
         self.label.alpha = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             self.earth.saveEarth()

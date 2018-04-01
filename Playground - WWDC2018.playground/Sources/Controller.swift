@@ -29,6 +29,7 @@ public class Controller{
         self.viewScene = UIView()
         self.viewQuiz = UIView()
         self.viewTheEnd = UIView()
+        
 
 
         self.startIntro()
@@ -52,41 +53,52 @@ public class Controller{
             print(#function,"restart scene")
             self.restartScenes()
         }
-        
+        viewScene = scenes.getView()
+        viewIntro = intro.getView()
+        viewQuiz = quiz.getView()
+        viewTheEnd = theEnd.getView()
+
+
+        self.view.addSubview(viewTheEnd)
+        self.view.addSubview(viewQuiz)
+        self.view.addSubview(viewScene)
+        self.view.addSubview(viewIntro)
+
     }
     //start pages
     func startScene(){
-        viewScene = scenes.getView()
         self.scenes.startScene(i: 0)
-        self.view.addSubview(viewScene)
+        self.view.bringSubview(toFront:viewScene)
     }
     
     func startIntro(){
-        viewIntro = intro.getView()
         self.intro.startIntro()
-        self.view.addSubview(viewIntro)
+        self.view.bringSubview(toFront:viewIntro)
     }
     
     func startQuiz(){
-        viewQuiz = quiz.getView()
         self.quiz.startQuiz()
-        self.view.addSubview(viewQuiz)
+        self.view.bringSubview(toFront:viewQuiz)
     }
     
     func startTheEnd(){
-        viewTheEnd = theEnd.getView()
         self.theEnd.startTheEnd()
-        self.view.addSubview(viewTheEnd)
+        self.view.bringSubview(toFront:viewTheEnd)
     }
     
     //change pages
     func changeToScenes(){
+        UIView.animate(withDuration: 1, animations: {
+            self.viewIntro.alpha = 0
+        }) { (true) in
         self.viewIntro.removeFromSuperview()
-        self.startScene()
+            
+            self.startScene()
+        }
     }
     
     func changeToQuiz() {
-        startQuiz()
+            startQuiz()
     }
     
     func changeToScenesEnd(){
@@ -96,8 +108,12 @@ public class Controller{
     }
     
     func changeToTheEnd(){
-        viewScene.removeFromSuperview()
-        self.startTheEnd()
+        UIView.animate(withDuration: 1, animations: {
+            self.viewScene.alpha = 0
+        }) { (true) in
+            self.viewScene.removeFromSuperview()
+            self.startTheEnd()
+        }
     }
     
     func restartScenes(){

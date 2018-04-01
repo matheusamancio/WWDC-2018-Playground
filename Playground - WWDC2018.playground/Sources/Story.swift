@@ -47,7 +47,7 @@ public class Story{
         let t4 = "Has been quite a while since i'm feeling sick"
         let t5 = "I used to have blue oceans and clean water for everyone"
         let t6 = "and now it's running out"
-        let t7 = "Every minute a newborn dies from infection caused by lack of safe water and an unclean environment."
+        let t7 = "Every minute a newborn dies from infection \ncaused by lack of safe water and an unclean environment."
         let t8 = "and 844 million people don’t have clean water"
         let t9 = " ... furthermore"
         let t10 = "my lungs are beeing affected as well"
@@ -96,7 +96,7 @@ public class Story{
         //Delay
         let d1: TimeInterval = 0
         let d2: TimeInterval = 3
-        self.arrayDelay = [d1,d1,d1,d1,d1,d2,d1,d1,d1,d1,d2,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1]
+        self.arrayDelay = [d2,d1,d1,d1,d1,d2,d1,d2,d1,d1,d2,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1]
         
         
         self.arrayText = arrayText1

@@ -71,6 +71,20 @@ public class TheEnd{
         self.watchAgainButton.layer.cornerRadius = 8
         self.watchAgainButton.addTarget(self, action: #selector(StartAnimation), for: .touchUpInside)
         self.view.addSubview(watchAgainButton)
+        
+        self.labelSubTitle.alpha = 0
+        self.labelTitle.alpha = 0
+        self.labelExplanation.alpha = 0
+        self.watchAgainButton.alpha = 0
+        
+        UIView.animate(withDuration: 3) {
+            
+            self.labelSubTitle.alpha = 1
+            self.labelTitle.alpha = 1
+            self.labelExplanation.alpha = 1
+            self.watchAgainButton.alpha = 1
+        }
+        
     }
     
     @objc func StartAnimation() {

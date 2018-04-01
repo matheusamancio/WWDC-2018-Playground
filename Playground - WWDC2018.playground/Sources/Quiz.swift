@@ -46,7 +46,7 @@ public class Quiz{
     private func buildQuiz(){
         i = 0
         self.view.backgroundColor = UIColor.quizBackgroundColor()
-
+        
         
         //label Subtitle
         self.labelSubTitle.frame = CGRect(x: 30, y: 10, width: 200, height: 50)
@@ -99,6 +99,23 @@ public class Quiz{
         self.answerThree.layer.cornerRadius = 3
         self.answerThree.addTarget(self, action: #selector(buttonThreePressed), for: .touchUpInside)
         self.view.addSubview(answerThree)
+        
+        labelSubTitle.alpha = 0
+        labelQuestion.alpha = 0
+        answerOne.alpha = 0
+        answerTwo.alpha = 0
+        answerThree.alpha = 0
+        
+        
+        UIView.animate(withDuration: 3) {
+            
+            self.labelSubTitle.alpha = 1
+            self.labelQuestion.alpha = 1
+            self.answerOne.alpha = 1
+            self.answerTwo.alpha = 1
+            self.answerThree.alpha = 1
+        }
+        
     }
     
     func nextQuestion(){
@@ -120,7 +137,12 @@ public class Quiz{
             if i < 2{
                 nextQuestion()
             }else{
-                self.clicked = 1
+                UIView.animate(withDuration: 1, animations: {
+                    self.view.alpha = 0
+                }) { (true) in
+                    self.clicked = 1
+                }
+                
             }
         }
     }
