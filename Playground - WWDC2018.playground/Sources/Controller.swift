@@ -92,7 +92,8 @@ public class Controller{
     }
     
     func startTheEnd(){
-        self.theEnd.startTheEnd()
+        let sup = self.quiz.getSuplement()
+        self.theEnd.startTheEnd(sup: sup)
         self.view.bringSubview(toFront:viewTheEnd)
     }
     

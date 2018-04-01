@@ -138,6 +138,7 @@ public class Quiz{
     
     @objc func buttonOnePressed() {
         print(#function,"one pressed")
+        self.suplementQuiz.setSelectedAnswers(i: i, answer: self.suplementQuiz.chooseAnswer1(i:i))
             if i < 2{
                 nextQuestion()
             }else{
@@ -152,6 +153,7 @@ public class Quiz{
     
     @objc func buttonTwoPressed() {
         print(#function,"two pressed")
+        self.suplementQuiz.setSelectedAnswers(i: i, answer: self.suplementQuiz.chooseAnswer2(i:i))
             if i < 2{
                 nextQuestion()
             }else{
@@ -161,11 +163,16 @@ public class Quiz{
     
     @objc func buttonThreePressed() {
         print(#function,"three pressed")
+        self.suplementQuiz.setSelectedAnswers(i: i, answer: self.suplementQuiz.chooseAnswer3(i:i))
             if i < 2{
                 nextQuestion()
             }else{
                 self.clicked = 1
             }
+    }
+    
+    public func getSuplement() -> SuplementQuiz{
+        return self.suplementQuiz
     }
     
     public func getView() -> UIView{

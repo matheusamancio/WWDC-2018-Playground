@@ -7,6 +7,7 @@ public class TheEnd{
     private var labelTitle: UILabel
     private var labelExplanation: UILabel
     private var labelCredits: UILabel
+    private var suplementQuiz: SuplementQuiz
     public var goToScenes: (()->())?
     private var clicked: Int{
         didSet {
@@ -23,6 +24,7 @@ public class TheEnd{
         var screenHeight: CGFloat {
             return UIScreen.main.bounds.height
         }
+        self.suplementQuiz = SuplementQuiz()
         self.clicked = 0
         self.view = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
         self.labelSubTitle = UILabel()
@@ -33,10 +35,19 @@ public class TheEnd{
         
     }
     
-    public func startTheEnd(){
+    public func startTheEnd(sup: SuplementQuiz){
+        self.suplementQuiz = sup
         buildTheEnd()
     }
     private func buildTheEnd(){
+        let arrayActs = self.suplementQuiz.getSelectedAnswers()
+        let act1 = arrayActs[0]
+        let act2 = arrayActs[1]
+        let act3 = arrayActs[2]
+        print(#function,act1)
+        print(#function,act2)
+        print(#function,act3)
+
         // center
         let centerWidth = view.frame.width/2
         let centerHeight = view.frame.height/2
@@ -51,24 +62,25 @@ public class TheEnd{
         
         //label Title
         self.labelTitle.frame = CGRect(x: centerWidth - 300, y: centerHeight/2 - 80, width: 600, height: 100)
-        self.labelTitle.text = "Small acts can make big impacts"
+        self.labelTitle.text = "Small acts can save the Earth"
         self.labelTitle.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.bold)
         self.labelTitle.tintColor = UIColor.black
         self.labelTitle.textAlignment = .center
         self.view.addSubview(self.labelTitle)
         
         //label Explanation
-        self.labelExplanation.frame = CGRect(x: centerWidth - 200, y: centerHeight/2 - 20, width: 400, height: 59)
-        self.labelExplanation.text = ""
+        self.labelExplanation.frame = CGRect(x: centerWidth - 200, y: centerHeight/2 - 20, width: 400, height: 300)
+        self.labelExplanation.text = "Like your acts:"
         self.labelExplanation.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.thin)
         self.labelExplanation.tintColor = UIColor.black
+        self.labelCredits.numberOfLines = 4
         self.labelExplanation.textAlignment = .center
         self.view.addSubview(self.labelExplanation)
         
         //button
         self.labelCredits.frame = CGRect(x: centerWidth - 300, y: centerHeight/2 + 60, width: 600, height: 400)
-        self.labelCredits.text = ""
-        self.labelCredits.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.thin)
+        self.labelCredits.text = "\n\(act1) \n\(act2) \n\(act3)"
+        self.labelCredits.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.thin)
         self.labelCredits.tintColor = UIColor.black
         self.labelCredits.textAlignment = .center
         self.labelCredits.numberOfLines = 4
@@ -84,6 +96,7 @@ public class TheEnd{
             self.labelSubTitle.alpha = 1
             self.labelTitle.alpha = 1
             self.labelExplanation.alpha = 1
+            self.labelCredits.alpha = 1
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 8) {

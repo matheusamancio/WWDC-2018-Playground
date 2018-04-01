@@ -11,7 +11,7 @@ public class Scenes{
     public var goToTheEnd: (()->())?
     var identifier: Int{
         didSet {
-            if identifier == 23{
+            if identifier == 21{
                 goToQuestions?()
             }
             if identifier == 30{
@@ -122,7 +122,7 @@ public class Scenes{
     
     public func sceneSequency(i: Int){
         identifier = i
-        if i <= 23{
+        if i <= 21{
             let delay = story.chooseDelay(i: i)
             let text = story.chooseText(i: i)
             let ref = story.chooseReferences(i: i)
@@ -132,8 +132,8 @@ public class Scenes{
             self.fadeOutInLabel(text:text, textColor: textColor, delay: delay, ref: ref)
             let id = i + 1
             event(i: i)
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 4 + delay) {
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4 + delay) {
+//            DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.sceneSequency(i: id)
             }
         }

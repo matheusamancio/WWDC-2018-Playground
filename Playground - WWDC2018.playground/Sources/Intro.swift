@@ -50,7 +50,7 @@ public class Intro{
         
         //label Title
         self.labelTitle.frame = CGRect(x: 30, y: 60, width: 400, height: 50)
-        self.labelTitle.text = "Welcome to my Playground"
+        self.labelTitle.text = "Earth's Plead"
         self.labelTitle.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.bold)
         self.labelTitle.tintColor = UIColor.black
         self.view.addSubview(self.labelTitle)
@@ -58,14 +58,14 @@ public class Intro{
         //label Explanation
         self.labelExplanation.frame = CGRect(x: 30, y: 80, width: 400, height: 150)
         self.labelExplanation.numberOfLines = 3
-        self.labelExplanation.text = "This is a short scene, that you will listen what \nthe earth has to speak. \nSo, prepare your heart to listen and help her."
+        self.labelExplanation.text = "In this short scene, you will listen a message from Earth. \nPrepare your heart to listen and help her."
 
-        self.labelExplanation.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.thin)
+        self.labelExplanation.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.thin)
         self.labelExplanation.tintColor = UIColor.black
         self.view.addSubview(self.labelExplanation)
         
         //button
-        self.startButton.frame = CGRect(x: 30, y: 220, width: 180, height: 40)
+        self.startButton.frame = CGRect(x: 30, y: 220, width: 200, height: 40)
         self.startButton.backgroundColor = UIColor.black
         self.startButton.setTitle("  Watch now", for: .normal)
         self.startButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium)

@@ -8,6 +8,7 @@ public class SuplementQuiz{
     private var arrayAnswer1: [String]
     private var arrayAnswer2: [String]
     private var arrayAnswer3: [String]
+    private var selectedAnswers: [String]
 
 
     
@@ -17,6 +18,7 @@ public class SuplementQuiz{
         self.arrayAnswer1 = []
         self.arrayAnswer2 = []
         self.arrayAnswer3 = []
+        self.selectedAnswers = []
 
 
         self.autoAppend()
@@ -63,6 +65,13 @@ public class SuplementQuiz{
     
     public func chooseAnswer3(i:Int) -> String{
         return arrayAnswer3[i]
+    }
+    public func getSelectedAnswers() -> [String]{
+        return selectedAnswers
+    }
+    
+    public func setSelectedAnswers(i: Int, answer: String){
+        selectedAnswers.insert(answer, at: i)
     }
 }
 
