@@ -11,7 +11,7 @@ public class Scenes{
     public var goToTheEnd: (()->())?
     var identifier: Int{
         didSet {
-            if identifier == 18{
+            if identifier == 17{
                 goToQuestions?()
             }
             if identifier == 30{
@@ -65,8 +65,9 @@ public class Scenes{
         moon.center = CGPoint(x: centerWidth - 100, y: centerHeight - 100)
 
         
-        self.label.frame = CGRect(x: 50, y: 50, width: 600, height: 150)
+        self.label.frame = CGRect(x: 30, y: 30, width: 600, height: 150)
         self.labelR.frame = CGRect(x: centerWidth + 100, y: centerHeight/2 + 70, width: 300, height: 150)
+        self.labelR.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.thin)
 
         self.label.numberOfLines = 2
         
@@ -122,7 +123,7 @@ public class Scenes{
     
     public func sceneSequency(i: Int){
         identifier = i
-        if i <= 18{
+        if i <= 17{
             let delay = story.chooseDelay(i: i)
             let text = story.chooseText(i: i)
             let ref = story.chooseReferences(i: i)

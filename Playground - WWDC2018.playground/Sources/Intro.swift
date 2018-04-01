@@ -50,7 +50,7 @@ public class Intro{
         
         //label Title
         self.labelTitle.frame = CGRect(x: 30, y: 60, width: 400, height: 50)
-        self.labelTitle.text = "Earth's Plead"
+        self.labelTitle.text = "Welcome to my Playground"
         self.labelTitle.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.bold)
         self.labelTitle.tintColor = UIColor.black
         self.view.addSubview(self.labelTitle)
