@@ -99,7 +99,7 @@ public class Controller{
     
     //change pages
     func changeToScenes(){
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.7, animations: {
             self.viewIntro.alpha = 0
         }) { (true) in
         self.viewIntro.removeFromSuperview()
@@ -113,7 +113,7 @@ public class Controller{
     }
     
     func changeToScenesEnd(){
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.7, animations: {
             self.viewQuiz.alpha = 0
         }) { (true) in
         self.view.addSubview(self.viewScene)
@@ -124,7 +124,7 @@ public class Controller{
     }
     
     func changeToTheEnd(){
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.7, animations: {
             self.viewScene.alpha = 0
         }) { (true) in
             self.viewScene.removeFromSuperview()

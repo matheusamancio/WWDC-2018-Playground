@@ -11,7 +11,7 @@ public class Scenes{
     public var goToTheEnd: (()->())?
     var identifier: Int{
         didSet {
-            if identifier == 21{
+            if identifier == 18{
                 goToQuestions?()
             }
             if identifier == 30{
@@ -99,7 +99,7 @@ public class Scenes{
         earth.moveToRight(image: cloud2)
         earth.moveMoon(center: globe.center)
 
-        UIView.animate(withDuration: 3) {
+        UIView.animate(withDuration: 2) {
             border.alpha = 1
             globe.alpha = 1
             water.alpha = 1
@@ -122,7 +122,7 @@ public class Scenes{
     
     public func sceneSequency(i: Int){
         identifier = i
-        if i <= 21{
+        if i <= 18{
             let delay = story.chooseDelay(i: i)
             let text = story.chooseText(i: i)
             let ref = story.chooseReferences(i: i)
@@ -132,7 +132,7 @@ public class Scenes{
             self.fadeOutInLabel(text:text, textColor: textColor, delay: delay, ref: ref)
             let id = i + 1
             event(i: i)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4 + delay) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.9 + delay) {
 //            DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.sceneSequency(i: id)
             }
@@ -142,15 +142,15 @@ public class Scenes{
     public func savingEarth(){
         self.label.alpha = 0
         self.labelR.alpha = 0
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
             self.earth.saveEarth()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 6){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5){
                 self.whichbackgroundColor(i:0)
                 let text = self.story.chooseText(i: 0)
                 let ref = self.story.chooseReferences(i: 0)
                 let textColor = self.story.chooseTextColor(i:0)
                 self.fadeOutInLabel(text:text, textColor: textColor, delay: 3, ref: ref)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 8){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7){
                     self.identifier = 30
                 }
             }

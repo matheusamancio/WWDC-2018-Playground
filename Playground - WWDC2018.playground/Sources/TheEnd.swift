@@ -91,7 +91,7 @@ public class TheEnd{
         self.labelExplanation.alpha = 0
         self.labelCredits.alpha = 0
         
-        UIView.animate(withDuration: 3) {
+        UIView.animate(withDuration: 1) {
             
             self.labelSubTitle.alpha = 1
             self.labelTitle.alpha = 1
@@ -99,7 +99,7 @@ public class TheEnd{
             self.labelCredits.alpha = 1
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
             self.finalSentence()
         }
         

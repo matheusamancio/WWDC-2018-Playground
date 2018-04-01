@@ -156,7 +156,7 @@ public class Earth{
         }
     }
     public func appearWater() {
-        UIView.animate(withDuration: 6) {
+        UIView.animate(withDuration: 4.5) {
             self.water.center.y -= 300
         }
     }

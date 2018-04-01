@@ -108,10 +108,10 @@ public class Quiz{
         self.view.addSubview(answerThree)
         
         
-        UIView.animate(withDuration: 2, animations: {
+        UIView.animate(withDuration: 1, animations: {
             self.view.alpha = 1
         }) { (true) in
-            UIView.animate(withDuration: 2) {
+            UIView.animate(withDuration: 1) {
 
             self.labelSubTitle.alpha = 1
             self.labelQuestion.alpha = 1
