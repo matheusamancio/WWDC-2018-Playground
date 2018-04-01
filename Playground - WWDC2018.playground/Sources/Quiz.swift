@@ -45,6 +45,13 @@ public class Quiz{
     }
     private func buildQuiz(){
         i = 0
+        self.view.alpha = 0
+        self.labelSubTitle.alpha = 0
+        self.labelQuestion.alpha = 0
+        self.answerOne.alpha = 0
+        self.answerTwo.alpha = 0
+        self.answerThree.alpha = 0
+        
         self.view.backgroundColor = UIColor.quizBackgroundColor()
         
         
@@ -100,20 +107,18 @@ public class Quiz{
         self.answerThree.addTarget(self, action: #selector(buttonThreePressed), for: .touchUpInside)
         self.view.addSubview(answerThree)
         
-        labelSubTitle.alpha = 0
-        labelQuestion.alpha = 0
-        answerOne.alpha = 0
-        answerTwo.alpha = 0
-        answerThree.alpha = 0
         
-        
-        UIView.animate(withDuration: 3) {
-            
+        UIView.animate(withDuration: 2, animations: {
+            self.view.alpha = 1
+        }) { (true) in
+            UIView.animate(withDuration: 2) {
+
             self.labelSubTitle.alpha = 1
             self.labelQuestion.alpha = 1
             self.answerOne.alpha = 1
             self.answerTwo.alpha = 1
             self.answerThree.alpha = 1
+            }
         }
         
     }

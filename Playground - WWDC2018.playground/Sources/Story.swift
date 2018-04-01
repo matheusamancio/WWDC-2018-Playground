@@ -63,14 +63,16 @@ public class Story{
         let t20 = "..."
         let t21 = "I need Help"
         let t22 = ""
+        let t23 = ""
+
         
-        let arrayText1 = [t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19, t20, t21, t22]
+        let arrayText1 = [t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19, t20, t21, t22, t23]
         
 
         //textColor
         let cB = UIColor.black
         let cW = UIColor.white
-        self.arrayTextColor = [cB,cB,cB,cB,cB,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW]
+        self.arrayTextColor = [cB,cB,cB,cB,cB,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW,cW]
         
         //textSize
         let size1: CGFloat = 12
@@ -91,12 +93,12 @@ public class Story{
         let b1 = 0
         let b2 = 1
         let b3 = 2
-        self.arrayBack = [b1,b1,b1,b1,b1,b2,b2,b2,b2,b2,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3]
+        self.arrayBack = [b1,b1,b1,b1,b1,b2,b2,b2,b2,b2,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3]
         
         //Delay
         let d1: TimeInterval = 0
         let d2: TimeInterval = 3
-        self.arrayDelay = [d2,d1,d1,d1,d1,d2,d1,d2,d1,d1,d2,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1]
+        self.arrayDelay = [d2,d1,d1,d1,d1,d2,d1,d2,d1,d1,d2,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1]
         
         
         self.arrayText = arrayText1

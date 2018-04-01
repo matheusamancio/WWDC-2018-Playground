@@ -29,6 +29,7 @@ public class TheEnd{
         self.labelTitle = UILabel()
         self.labelExplanation = UILabel()
         self.watchAgainButton = UIButton()
+        self.view.backgroundColor = .white
         
     }
     
@@ -37,7 +38,6 @@ public class TheEnd{
     }
     private func buildTheEnd(){
         // center
-        self.view.backgroundColor = UIColor.white
         let centerWidth = view.frame.width/2
         let centerHeight = view.frame.height/2
         

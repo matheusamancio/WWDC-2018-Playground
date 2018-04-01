@@ -102,9 +102,14 @@ public class Controller{
     }
     
     func changeToScenesEnd(){
-        self.view.addSubview(viewScene)
-        viewQuiz.removeFromSuperview()
-        scenes.savingEarth()
+        UIView.animate(withDuration: 1, animations: {
+            self.viewQuiz.alpha = 0
+        }) { (true) in
+        self.view.addSubview(self.viewScene)
+        self.viewQuiz.removeFromSuperview()
+        self.scenes.savingEarth()
+            
+        }
     }
     
     func changeToTheEnd(){

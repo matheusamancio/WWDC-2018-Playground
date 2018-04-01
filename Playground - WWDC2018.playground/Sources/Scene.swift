@@ -10,7 +10,7 @@ public class Scenes{
     public var goToTheEnd: (()->())?
     var identifier: Int{
         didSet {
-            if identifier == 22{
+            if identifier == 23{
                 goToQuestions?()
             }
             if identifier == 30{
@@ -116,7 +116,7 @@ public class Scenes{
     
     public func sceneSequency(i: Int){
         identifier = i
-        if i <= 22{
+        if i <= 23{
             let delay = story.chooseDelay(i: i)
             let text = story.chooseText(i: i)
             let textColor = story.chooseTextColor(i:i)
